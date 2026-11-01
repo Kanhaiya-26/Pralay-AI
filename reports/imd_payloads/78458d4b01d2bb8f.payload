@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+IMD Seasonal Forecast - Aug-Sep 2026
+</title>
+
+
+<style>
+
+/* ============================================================
+   GLOBAL
+============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f2f4f7;
+
+    color: #222;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.header {
+
+    background: #0b3d91;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px 20px;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.2);
+}
+
+.header h1 {
+
+    margin: 0;
+
+    font-size: 23px;
+}
+
+.header p {
+
+    margin: 6px 0 0;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   MAIN CONTAINER
+============================================================ */
+
+.container {
+
+    width: 95%;
+
+    max-width: 1100px;
+
+    margin: 20px auto;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,.12);
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   MAP
+============================================================ */
+
+.map-section {
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+.map-title {
+
+    color: #0b3d91;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+.map-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 768px;
+
+    margin: auto;
+
+    border: 1px solid #999;
+
+    overflow: hidden;
+
+    cursor: crosshair;
+
+    background: #eee;
+}
+
+
+.map-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* ============================================================
+   CLICK MARKER
+============================================================ */
+
+.click-marker {
+
+    position: absolute;
+
+    width: 17px;
+
+    height: 17px;
+
+    margin-left: -8px;
+
+    margin-top: -8px;
+
+    border-radius: 50%;
+
+    background: red;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 0 0 2px red,
+        0 2px 5px rgba(0,0,0,.5);
+
+    display: none;
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+
+/* ============================================================
+   LOADING
+============================================================ */
+
+.loading {
+
+    display: none;
+
+    color: #0b3d91;
+
+    font-weight: bold;
+
+    margin: 10px;
+}
+
+
+/* ============================================================
+   RESULT
+============================================================ */
+
+.result-section {
+
+    max-width: 768px;
+
+    margin: 15px auto 0;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #d6dce3;
+
+    border-radius: 6px;
+
+    text-align: left;
+}
+
+
+.result-title {
+
+    color: #0b3d91;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+.result-box {
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    padding: 11px;
+}
+
+
+.result-label {
+
+    color: #666;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+
+.result-value {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #111;
+}
+
+
+#category {
+
+    color: #0b3d91;
+}
+
+
+/* ============================================================
+   LEGEND
+============================================================ */
+
+.legend-section {
+
+    border-top: 1px solid #ddd;
+
+    background: #fafafa;
+
+    padding: 15px 20px;
+
+    text-align: center;
+}
+
+
+.legend-title {
+
+    color: #0b3d91;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+/*
+ * Three GeoServer legend images are placed horizontally.
+ */
+
+.legend-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    padding: 12px;
+}
+
+
+/* Individual legend */
+
+.legend-item {
+
+    flex: 0 0 auto;
+
+    text-align: center;
+
+    padding: 5px 15px;
+}
+
+
+.legend-name {
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    color: #333;
+
+    margin-bottom: 5px;
+}
+
+
+/*
+ * The actual GeoServer legend image.
+ *
+ * Its labels, values and colors are untouched.
+ */
+
+.legend-image {
+
+    display: block;
+
+    width: auto;
+
+    height: auto;
+
+    max-width: none;
+
+    margin: auto;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.info {
+
+    border-top: 1px solid #ddd;
+
+    padding: 12px 20px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .header h1 {
+
+        font-size: 19px;
+    }
+
+    .header p {
+
+        font-size: 12px;
+    }
+
+    .container {
+
+        width: 100%;
+
+        margin: 0;
+
+        border-radius: 0;
+    }
+
+    .map-section {
+
+        padding: 7px;
+    }
+
+    .result-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .legend-container {
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     HEADER
+========================================================= -->
+
+<div class="header">
+
+    <h1>
+        IMD Seasonal Forecast
+    </h1>
+
+    <p>
+        APRIC 2026 &nbsp;|&nbsp; Aug-Sep 2026
+    </p>
+
+</div>
+
+
+
+<!-- ========================================================
+     MAIN
+========================================================= -->
+
+<div class="container">
+
+
+    <!-- ====================================================
+         MAP
+    ===================================================== -->
+
+    <div class="map-section">
+
+        <div class="map-title">
+
+            Probability Forecast
+
+        </div>
+
+
+        <div
+            id="mapWrapper"
+            class="map-wrapper"
+        >
+
+            <img
+                id="mapImage"
+
+                src="https://reactjs.imd.gov.in/geoserver/wms?service=WMS&amp;version=1.1.0&amp;request=GetMap&amp;layers=PROB_FCST_APRIC_2026_JJAS&amp;bbox=66.375%2C6.375%2C100.125%2C38.625&amp;width=768&amp;height=733&amp;srs=EPSG%3A4326&amp;styles=&amp;format=image%2Fpng"
+
+                class="map-image"
+
+                alt="IMD Probability Forecast"
+            >
+
+
+            <div
+                id="clickMarker"
+                class="click-marker"
+            ></div>
+
+        </div>
+
+
+        <div
+            id="loading"
+            class="loading"
+        >
+            Fetching forecast value...
+        </div>
+
+
+        <!-- ==================================================
+             CLICK RESULT
+        =================================================== -->
+
+        <div class="result-section">
+
+            <div class="result-title">
+
+                Selected Location
+
+            </div>
+
+
+            <div id="status">
+
+                Click anywhere on the map to get
+                the forecast category and value.
+
+            </div>
+
+
+            <div
+                id="resultGrid"
+                class="result-grid"
+                style="display:none;"
+            >
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        Latitude
+                    </div>
+
+                    <div
+                        id="latitude"
+                        class="result-value"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        Longitude
+                    </div>
+
+                    <div
+                        id="longitude"
+                        class="result-value"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        Forecast Category
+                    </div>
+
+                    <div
+                        id="category"
+                        class="result-value"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        Probability
+                    </div>
+
+                    <div
+                        id="probability"
+                        class="result-value"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ====================================================
+         HORIZONTAL LEGENDS
+    ===================================================== -->
+
+    <div class="legend-section">
+
+        <div class="legend-title">
+
+            Forecast Categories
+
+        </div>
+
+
+        <div class="legend-container">
+
+
+            <!-- ABOVE NORMAL -->
+
+            <div class="legend-item">
+
+                <div class="legend-name">
+                    Above Normal
+                </div>
+
+                <img
+                    class="legend-image"
+
+                    src="https://reactjs.imd.gov.in/geoserver/wms?service=WMS&amp;version=1.1.0&amp;request=GetLegendGraphic&amp;layer=Prec_ANormal_JJAS&amp;format=image%2Fpng&amp;legend_options=forceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BfontSize%3A12%3BfontColor%3A0x000000%3BbgColor%3A0xFFFFFF"
+
+                    alt="Above Normal Legend"
+                >
+
+            </div>
+
+
+            <!-- NORMAL -->
+
+            <div class="legend-item">
+
+                <div class="legend-name">
+                    Normal
+                </div>
+
+                <img
+                    class="legend-image"
+
+                    src="https://reactjs.imd.gov.in/geoserver/wms?service=WMS&amp;version=1.1.0&amp;request=GetLegendGraphic&amp;layer=Prec_Normal_JJAS&amp;format=image%2Fpng&amp;legend_options=forceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BfontSize%3A12%3BfontColor%3A0x000000%3BbgColor%3A0xFFFFFF"
+
+                    alt="Normal Legend"
+                >
+
+            </div>
+
+
+            <!-- BELOW NORMAL -->
+
+            <div class="legend-item">
+
+                <div class="legend-name">
+                    Below Normal
+                </div>
+
+                <img
+                    class="legend-image"
+
+                    src="https://reactjs.imd.gov.in/geoserver/wms?service=WMS&amp;version=1.1.0&amp;request=GetLegendGraphic&amp;layer=Prec_BNormal_JJAS&amp;format=image%2Fpng&amp;legend_options=forceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BfontSize%3A12%3BfontColor%3A0x000000%3BbgColor%3A0xFFFFFF"
+
+                    alt="Below Normal Legend"
+                >
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* ============================================================
+   CONFIGURATION
+============================================================ */
+
+const geoserver =
+    "https:\/\/reactjs.imd.gov.in\/geoserver\/wms";
+
+
+const mapWidth =
+    768;
+
+
+const mapHeight =
+    733;
+
+
+const minLon =
+    66.375;
+
+
+const minLat =
+    6.375;
+
+
+const maxLon =
+    100.125;
+
+
+const maxLat =
+    38.625;
+
+
+/*
+ * Actual raster layer names returned by GeoServer.
+ */
+
+const forecastLayers = {
+
+    above: "Prec_ANormal_JJAS",
+
+    normal: "Prec_Normal_JJAS",
+
+    below: "Prec_BNormal_JJAS"
+
+};
+
+
+/* ============================================================
+   HTML ELEMENTS
+============================================================ */
+
+const mapWrapper =
+    document.getElementById(
+        "mapWrapper"
+    );
+
+
+const mapImage =
+    document.getElementById(
+        "mapImage"
+    );
+
+
+const marker =
+    document.getElementById(
+        "clickMarker"
+    );
+
+
+const loading =
+    document.getElementById(
+        "loading"
+    );
+
+
+const status =
+    document.getElementById(
+        "status"
+    );
+
+
+const resultGrid =
+    document.getElementById(
+        "resultGrid"
+    );
+
+
+const latitude =
+    document.getElementById(
+        "latitude"
+    );
+
+
+const longitude =
+    document.getElementById(
+        "longitude"
+    );
+
+
+const category =
+    document.getElementById(
+        "category"
+    );
+
+
+const probability =
+    document.getElementById(
+        "probability"
+    );
+
+
+/* ============================================================
+   VALID VALUE CHECK
+============================================================ */
+
+function isValidValue(value)
+{
+
+    if (
+        value === null ||
+        value === undefined ||
+        value === ""
+    ) {
+
+        return false;
+
+    }
+
+
+    const n =
+        Number(value);
+
+
+    if (
+        !Number.isFinite(n)
+    ) {
+
+        return false;
+
+    }
+
+
+    /*
+     * IMD NoData value:
+     *
+     * -1.0E34
+     */
+
+    if (
+        n <= -1e30
+    ) {
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+/* ============================================================
+   EXTRACT GRAY_INDEX
+============================================================ */
+
+function extractValue(data)
+{
+
+    if (
+        !data ||
+        !data.features ||
+        data.features.length === 0
+    ) {
+
+        return null;
+
+    }
+
+
+    const properties =
+        data.features[0].properties || {};
+
+
+    if (
+        properties.GRAY_INDEX !== undefined
+    ) {
+
+        return properties.GRAY_INDEX;
+
+    }
+
+
+    if (
+        properties.fidGRAY_INDEX !== undefined
+    ) {
+
+        return properties.fidGRAY_INDEX;
+
+    }
+
+
+    /*
+     * Fallback for another numeric property.
+     */
+
+    for (
+        const key of Object.keys(properties)
+    ) {
+
+        if (
+            isValidValue(
+                properties[key]
+            )
+        ) {
+
+            return properties[key];
+
+        }
+
+    }
+
+
+    return null;
+
+}
+
+
+/* ============================================================
+   QUERY ONE RASTER
+============================================================ */
+
+async function queryRaster(
+    layerName,
+    x,
+    y
+)
+{
+
+    const params =
+        new URLSearchParams({
+
+            service:
+                "WMS",
+
+            version:
+                "1.1.0",
+
+            request:
+                "GetFeatureInfo",
+
+            layers:
+                layerName,
+
+            query_layers:
+                layerName,
+
+            styles:
+                "",
+
+            srs:
+                "EPSG:4326",
+
+            bbox:
+                minLon + "," +
+                minLat + "," +
+                maxLon + "," +
+                maxLat,
+
+            width:
+                mapWidth,
+
+            height:
+                mapHeight,
+
+            x:
+                x,
+
+            y:
+                y,
+
+            info_format:
+                "application/json",
+
+            feature_count:
+                "1",
+
+            exceptions:
+                "application/json"
+
+        });
+
+
+    const response =
+        await fetch(
+            geoserver +
+            "?" +
+            params.toString()
+        );
+
+
+    if (
+        !response.ok
+    ) {
+
+        throw new Error(
+            "HTTP " +
+            response.status
+        );
+
+    }
+
+
+    return await response.json();
+
+}
+
+
+/* ============================================================
+   MAP CLICK
+============================================================ */
+
+mapWrapper.addEventListener(
+    "click",
+    async function(event)
+    {
+
+        const rect =
+            mapImage.getBoundingClientRect();
+
+
+        /*
+         * Click position in displayed image.
+         */
+
+        const displayX =
+            event.clientX -
+            rect.left;
+
+
+        const displayY =
+            event.clientY -
+            rect.top;
+
+
+        if (
+            displayX < 0 ||
+            displayY < 0 ||
+            displayX > rect.width ||
+            displayY > rect.height
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+         * Marker.
+         */
+
+        marker.style.left =
+            displayX + "px";
+
+        marker.style.top =
+            displayY + "px";
+
+        marker.style.display =
+            "block";
+
+
+        /*
+         * Convert to original WMS pixel.
+         */
+
+        const x =
+            Math.max(
+                0,
+                Math.min(
+                    mapWidth - 1,
+                    Math.round(
+                        (
+                            displayX /
+                            rect.width
+                        ) *
+                        mapWidth
+                    )
+                )
+            );
+
+
+        const y =
+            Math.max(
+                0,
+                Math.min(
+                    mapHeight - 1,
+                    Math.round(
+                        (
+                            displayY /
+                            rect.height
+                        ) *
+                        mapHeight
+                    )
+                )
+            );
+
+
+        /*
+         * Geographic coordinate.
+         */
+
+        const lon =
+            minLon +
+            (
+                x / mapWidth
+            ) *
+            (
+                maxLon - minLon
+            );
+
+
+        const lat =
+            maxLat -
+            (
+                y / mapHeight
+            ) *
+            (
+                maxLat - minLat
+            );
+
+
+        latitude.textContent =
+            lat.toFixed(4) + "°";
+
+
+        longitude.textContent =
+            lon.toFixed(4) + "°";
+
+
+        category.textContent =
+            "Loading...";
+
+
+        probability.textContent =
+            "Loading...";
+
+
+        resultGrid.style.display =
+            "grid";
+
+
+        status.textContent =
+            "Checking forecast categories...";
+
+
+        loading.style.display =
+            "block";
+
+
+        try {
+
+            /*
+             * Query all three rasters.
+             */
+
+            const results =
+                await Promise.all([
+
+                    queryRaster(
+                        forecastLayers.above,
+                        x,
+                        y
+                    ),
+
+                    queryRaster(
+                        forecastLayers.normal,
+                        x,
+                        y
+                    ),
+
+                    queryRaster(
+                        forecastLayers.below,
+                        x,
+                        y
+                    )
+
+                ]);
+
+
+            const aboveValue =
+                extractValue(
+                    results[0]
+                );
+
+
+            const normalValue =
+                extractValue(
+                    results[1]
+                );
+
+
+            const belowValue =
+                extractValue(
+                    results[2]
+                );
+
+
+            console.log(
+                "Above Normal:",
+                aboveValue
+            );
+
+
+            console.log(
+                "Normal:",
+                normalValue
+            );
+
+
+            console.log(
+                "Below Normal:",
+                belowValue
+            );
+
+
+            /*
+             * Find valid category.
+             */
+
+            let selected =
+                null;
+
+
+            if (
+                isValidValue(
+                    aboveValue
+                )
+            ) {
+
+                selected = {
+
+                    name:
+                        "Above Normal",
+
+                    value:
+                        Number(
+                            aboveValue
+                        )
+
+                };
+
+            }
+
+
+            if (
+                !selected &&
+                isValidValue(
+                    normalValue
+                )
+            ) {
+
+                selected = {
+
+                    name:
+                        "Normal",
+
+                    value:
+                        Number(
+                            normalValue
+                        )
+
+                };
+
+            }
+
+
+            if (
+                !selected &&
+                isValidValue(
+                    belowValue
+                )
+            ) {
+
+                selected = {
+
+                    name:
+                        "Below Normal",
+
+                    value:
+                        Number(
+                            belowValue
+                        )
+
+                };
+
+            }
+
+
+            /*
+             * No data.
+             */
+
+            if (!selected) {
+
+                category.textContent =
+                    "No Data";
+
+                probability.textContent =
+                    "-";
+
+                status.textContent =
+                    "No forecast data at this location.";
+
+                return;
+
+            }
+
+
+            /*
+             * Display result.
+             */
+
+            category.textContent =
+                selected.name;
+
+
+            probability.textContent =
+                selected.value.toFixed(2) +
+                "%";
+
+
+            status.textContent =
+                "Forecast value retrieved successfully.";
+
+        }
+
+        catch(error) {
+
+            console.error(
+                error
+            );
+
+
+            category.textContent =
+                "Error";
+
+
+            probability.textContent =
+                "-";
+
+
+            status.textContent =
+                "Unable to retrieve forecast value.";
+
+        }
+
+        finally {
+
+            loading.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+# Test-only dependencies (not needed to run the app).
+-r requirements.txt
+playwright>=1.44   # browser UI tests drive the installed Microsoft Edge (channel="msedge"); no browser download needed

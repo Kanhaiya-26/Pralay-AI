@@ -1,0 +1,116 @@
+[
+ {
+  "provider": "imd_public",
+  "dataset": "aws",
+  "state": "DEGRADED",
+  "http_status": 200,
+  "retrieved": 2000,
+  "accepted": 1980,
+  "rejected": 20,
+  "reasons": {
+   "foreign_or_unresolved_country": 20
+  },
+  "error": null,
+  "secs": 53.4
+ },
+ {
+  "provider": "imd_public",
+  "dataset": "synop",
+  "state": "DEGRADED",
+  "http_status": 200,
+  "retrieved": 466,
+  "accepted": 442,
+  "rejected": 24,
+  "reasons": {
+   "foreign_or_unresolved_country": 21,
+   "missing_source_timestamp": 3
+  },
+  "error": null,
+  "secs": 11.1
+ },
+ {
+  "provider": "imd_public",
+  "dataset": "metar",
+  "state": "DEGRADED",
+  "http_status": 200,
+  "retrieved": 145,
+  "accepted": 137,
+  "rejected": 8,
+  "reasons": {
+   "foreign_or_unresolved_country": 8
+  },
+  "error": null,
+  "secs": 3.4
+ },
+ {
+  "provider": "imd_public",
+  "dataset": "station_nowcast",
+  "state": "DEGRADED",
+  "http_status": 200,
+  "retrieved": 1219,
+  "accepted": 1086,
+  "rejected": 133,
+  "reasons": {
+   "future_published_at": 58,
+   "missing_source_timestamp": 63,
+   "foreign_or_unresolved_country": 12
+  },
+  "error": null,
+  "secs": 29.1
+ },
+ {
+  "provider": "imd_public",
+  "dataset": "district_nowcast",
+  "state": "DEGRADED",
+  "http_status": 200,
+  "retrieved": 764,
+  "accepted": 720,
+  "rejected": 44,
+  "reasons": {
+   "future_published_at": 36,
+   "missing_source_timestamp": 8
+  },
+  "error": null,
+  "secs": 17.1
+ },
+ {
+  "provider": "imd_public",
+  "dataset": "district_warning",
+  "state": "DEGRADED",
+  "http_status": 200,
+  "retrieved": 764,
+  "accepted": 756,
+  "rejected": 8,
+  "reasons": {
+   "missing_source_timestamp": 8
+  },
+  "error": null,
+  "secs": 23.5
+ },
+ {
+  "provider": "imd_public",
+  "dataset": "rss",
+  "state": "STALE_DATA",
+  "http_status": 200,
+  "retrieved": 100,
+  "accepted": 100,
+  "rejected": 0,
+  "reasons": {},
+  "error": null,
+  "secs": 2.5
+ },
+ {
+  "provider": "usgs",
+  "dataset": "earthquakes",
+  "state": "DEGRADED",
+  "http_status": 200,
+  "retrieved": 14,
+  "accepted": 0,
+  "rejected": 14,
+  "reasons": {
+   "foreign_or_unresolved_country": 14
+  },
+  "error": "Source answered but no acceptable timestamped India records were returned",
+  "secs": 1.9
+ }
+]

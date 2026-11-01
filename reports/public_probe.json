@@ -1,0 +1,376 @@
+[
+  {
+    "name": "usgs",
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-10-24&endtime=2026-11-01&minlatitude=6&maxlatitude=38&minlongitude=68&maxlongitude=98&limit=100&orderby=time",
+    "retrieved_at": "2026-10-31T15:35:48.231251+00:00",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "final_url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-10-24&endtime=2026-11-01&minlatitude=6&maxlatitude=38&minlongitude=68&maxlongitude=98&limit=100&orderby=time",
+    "bytes": 12364,
+    "sample_path": "reports\\provider_samples\\usgs.raw",
+    "structure": [
+      "type",
+      "metadata",
+      "features",
+      "bbox"
+    ],
+    "record_count": 17,
+    "generated": 1793460949000,
+    "india_named": [
+      {
+        "id": "us7000tty7",
+        "place": "218 km NNW of Bamboo Flat, India",
+        "time": 1793263782448,
+        "coordinates": [
+          91.6593,
+          13.3785,
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "name": "usgs_feed",
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson",
+    "retrieved_at": "2026-10-31T15:35:48.232252+00:00",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "final_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson",
+    "bytes": 1290086,
+    "sample_path": "reports\\provider_samples\\usgs_feed.raw",
+    "structure": [
+      "type",
+      "metadata",
+      "features",
+      "bbox"
+    ],
+    "record_count": 1811,
+    "generated": 1793460930000,
+    "india_named": [
+      {
+        "id": "us7000tty7",
+        "place": "218 km NNW of Bamboo Flat, India",
+        "time": 1793263782448,
+        "coordinates": [
+          91.6593,
+          13.3785,
+          10
+        ]
+      },
+      {
+        "id": "us7000ttvs",
+        "place": "western Indian-Antarctic Ridge",
+        "time": 1793236024538,
+        "coordinates": [
+          139.4087,
+          -50.2688,
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "name": "sachet",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/rss/rss_india.xml",
+    "retrieved_at": "2026-10-31T15:35:48.232252+00:00",
+    "http_status": 200,
+    "content_type": "application/xml",
+    "final_url": "https://sachet.ndma.gov.in/cap_public_website/rss/rss_india.xml",
+    "bytes": 79562,
+    "sample_path": "reports\\provider_samples\\sachet.raw",
+    "record_count": 100,
+    "sample": [
+      {
+        "title": "మీ ప్రాంతంలో పిడుగులు పడే అవకాశం ఉంది.ఉరుములు మెరుపులతో కూడిన వర్షం పడేప్పుడు చెట్లు,టవర్స్,పోల్స్,పొలాలు,బహిరంగ ప్రదేశాల్లో ఉండరాదు.సురక్షితమైన భవనాల్లో ఆశ్రయం పొందండి-ఆంధ్రప్రదేశ్ ప్రభుత్వం.",
+        "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793460089801008",
+        "pubDate": "Sat, 31 Oct 2026 15:22:46 GMT",
+        "description": ""
+      },
+      {
+        "title": "৩১-১০-২০২৬ সন্ধ্যা ৭:৩৫ থেকে পরবর্তী ২-৩ ঘণ্টা ঝাড়গ্রামের কিছু এলাকায় বজ্রবিদ্যুৎ ও হালকা থেকে মাঝারি বৃষ্টির সম্ভাবনা রয়েছে। নিরাপদ স্থানে থাকুন।",
+        "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793455917187017",
+        "pubDate": "Sat, 31 Oct 2026 14:17:39 GMT",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "worldpop",
+    "url": "https://www.worldpop.org/rest/data/pop/wpgp?iso3=IND",
+    "retrieved_at": "2026-10-31T15:35:48.233248+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://hub.worldpop.org/rest/data/pop/wpgp?iso3=IND",
+    "bytes": 38419,
+    "sample_path": "reports\\provider_samples\\worldpop.raw",
+    "structure": [
+      "data"
+    ],
+    "record_count": 21
+  },
+  {
+    "name": "overpass",
+    "url": "https://overpass-api.de/api/interpreter?data=%5Bout:json%5D%5Btimeout:15%5D;node(around:1000,30.7046,76.7179)%5Bamenity=hospital%5D;out%20meta%2010;",
+    "retrieved_at": "2026-10-31T15:35:48.233248+00:00",
+    "error": "The read operation timed out"
+  },
+  {
+    "name": "bluesky",
+    "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=India%20flood&limit=10",
+    "retrieved_at": "2026-10-31T15:35:49.142957+00:00",
+    "http_status": 403,
+    "content_type": "text/html",
+    "final_url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=India%20flood&limit=10",
+    "bytes": 2334,
+    "sample_path": "reports\\provider_samples\\bluesky.raw",
+    "structure": "non JSON/XML",
+    "snippet": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body"
+  },
+  {
+    "name": "mastodon",
+    "url": "https://mastodon.social/api/v1/timelines/tag/india?limit=5",
+    "retrieved_at": "2026-10-31T15:35:49.564005+00:00",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "final_url": "https://mastodon.social/api/v1/timelines/tag/india?limit=5",
+    "bytes": 20246,
+    "sample_path": "reports\\provider_samples\\mastodon.raw",
+    "structure": "list",
+    "record_count": 5
+  },
+  {
+    "name": "ems",
+    "url": "https://mapping.emergency.copernicus.eu/activations/",
+    "retrieved_at": "2026-10-31T15:35:49.799878+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://mapping.emergency.copernicus.eu/activations/",
+    "bytes": 15897,
+    "sample_path": "reports\\provider_samples\\ems.raw",
+    "structure": "non JSON/XML",
+    "snippet": "\n\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\" />\n        <link rel=\"shortcut icon\" href=\"/static/images/favicon.ico\" />\n"
+  },
+  {
+    "name": "google_news",
+    "url": "https://news.google.com/rss/search?q=India%20disaster%20when:7d&hl=en-IN&gl=IN&ceid=IN:en",
+    "retrieved_at": "2026-10-31T15:35:49.834127+00:00",
+    "http_status": 200,
+    "content_type": "application/xml; charset=utf-8",
+    "final_url": "https://news.google.com/rss/search?q=India%20disaster%20when:7d&hl=en-IN&gl=IN&ceid=IN:en",
+    "bytes": 143891,
+    "sample_path": "reports\\provider_samples\\google_news.raw",
+    "record_count": 77,
+    "sample": [
+      {
+        "title": "Taiwan Shares Climate Resilience and Disaster Management Experience at ARISE Cities Forum 2026! - www.roc-taiwan.org",
+        "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9OcUNZcWpNR2xyTEZ4WlgwQ3Q4NTc1VXVIeHJLQ1p6ZE1hb0h1NXRsYzViUHBwM2dicE9RSEdTOERYVG42aWpNeERCaGoyU1BMYWliSFhDT3RPaWs?oc=5",
+        "pubDate": "Wed, 28 Oct 2026 18:21:47 GMT",
+        "description": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTE9OcUNZcWpNR2xyTEZ4WlgwQ3Q4NTc1VXVIeHJLQ1p6ZE1hb0h1NXRsYzViUHBwM2dicE9RSEdTOERYVG42aWpNeERCaGoyU1BMYWliSFhDT3RPaWs?oc=5\" target=\"_blank\">Taiwan Shares Climate Resilience and Disaster Management Experience at ARISE Cities Forum 2026!</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">www.roc-taiwan.org</font>"
+      },
+      {
+        "title": "Scientists explore whether Himalayan disasters can be anticipated - Mongabay India",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQcjN4R1JEcThBVWlLUXF6VXo1OWw0bWRMX004bTFPUEcxUGN2NjRpVE5GTWtGRGFNT2dwVkFMYzJ5dmNFSC10Rmc0WXJmYkUtU2I2ZEJxMkJ5dXEzRnlFVTBHM3FZWFI2bWg5UUFuMkNMQXM3M1BSR3VmckJTLTFyczRWMzJTV29rR3FQdTk0Z3dnSzZQM2NBVTJBSHF3X0RNcDRN?oc=5",
+        "pubDate": "Fri, 30 Oct 2026 10:06:09 GMT",
+        "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQcjN4R1JEcThBVWlLUXF6VXo1OWw0bWRMX004bTFPUEcxUGN2NjRpVE5GTWtGRGFNT2dwVkFMYzJ5dmNFSC10Rmc0WXJmYkUtU2I2ZEJxMkJ5dXEzRnlFVTBHM3FZWFI2bWg5UUFuMkNMQXM3M1BSR3VmckJTLTFyczRWMzJTV29rR3FQdTk0Z3dnSzZQM2NBVTJBSHF3X0RNcDRN?oc=5\" target=\"_blank\">Scientists explore whether Himalayan disasters can be anticipated</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Mongabay India</font>"
+      }
+    ]
+  },
+  {
+    "name": "gdelt",
+    "url": "https://api.gdeltproject.org/api/v2/doc/doc?query=India%20flood&mode=artlist&format=json&maxrecords=5&timespan=1d",
+    "retrieved_at": "2026-10-31T15:35:50.476948+00:00",
+    "http_status": 429,
+    "content_type": null,
+    "final_url": "https://api.gdeltproject.org/api/v2/doc/doc?query=India%20flood&mode=artlist&format=json&maxrecords=5&timespan=1d",
+    "bytes": 444,
+    "sample_path": "reports\\provider_samples\\gdelt.raw",
+    "structure": "non JSON/XML",
+    "snippet": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngram"
+  },
+  {
+    "name": "sachet_cap_0",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793460089801008",
+    "retrieved_at": "2026-10-31T15:37:04.586114+00:00",
+    "http_status": 200,
+    "content_type": "text/xml;charset=UTF-8",
+    "bytes": 2855,
+    "identifier": "IN-1793460089801008_8",
+    "sent": "2026-10-31T20:51:29+05:30",
+    "status": "Actual",
+    "msgType": "Alert",
+    "info_fields": {
+      "event": "Lightning",
+      "onset": "2026-10-31T20:52:44+05:30",
+      "expires": "2026-10-31T23:50:00+05:30",
+      "effective": "2026-10-31T20:50:00+05:30",
+      "severity": "Severe",
+      "certainty": "Possible",
+      "urgency": "Expected",
+      "headline": "There is a possibility of lightning in your area. During thunderstorms, avoid trees, towers, poles, fields, and open spaces. Seek shelter in safe buildings - Andhra Pradesh Government."
+    },
+    "areas": [
+      {
+        "areaDesc": "ndl-allagadda Mandal ",
+        "polygon": null,
+        "circle": null,
+        "geocodes": []
+      }
+    ]
+  },
+  {
+    "name": "sachet_cap_1",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793455917187017",
+    "retrieved_at": "2026-10-31T15:37:04.591848+00:00",
+    "http_status": 200,
+    "content_type": "text/xml;charset=UTF-8",
+    "bytes": 3081,
+    "identifier": "IN-1793455917187017_17",
+    "sent": "2026-10-31T19:47:37+05:30",
+    "status": "Actual",
+    "msgType": "Update",
+    "info_fields": {
+      "event": "Thunderstorm with Lightning",
+      "onset": "2026-10-31T19:47:37+05:30",
+      "expires": "2026-10-31T22:35:00+05:30",
+      "effective": "2026-10-31T19:35:00+05:30",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "headline": "Light to moderate Thunderstorm  lightning accompanied with light to moderate rain. very likely to affect over some parts of Jhargram district during next 2-3 hours from 19:35, 31-10-2026."
+    },
+    "areas": [
+      {
+        "areaDesc": "Jhargram district of West Bengal",
+        "polygon": null,
+        "circle": null,
+        "geocodes": [
+          {
+            "valueName": "LGD District Code",
+            "value": "703"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "sachet_cap_2",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793454540021008",
+    "retrieved_at": "2026-10-31T15:37:04.595368+00:00",
+    "http_status": 200,
+    "content_type": "text/xml;charset=UTF-8",
+    "bytes": 2761,
+    "identifier": "IN-1793454540021008_8",
+    "sent": "2026-10-31T19:19:00+05:30",
+    "status": "Actual",
+    "msgType": "Alert",
+    "info_fields": {
+      "event": "Lightning",
+      "onset": "2026-10-31T19:19:52+05:30",
+      "expires": "2026-10-31T22:20:00+05:30",
+      "effective": "2026-10-31T19:20:00+05:30",
+      "severity": "Severe",
+      "certainty": "Possible",
+      "urgency": "Expected",
+      "headline": "Lightning is Likely to occur over ndl-rudravaram Mandal . Please follow SDMA guidelines."
+    },
+    "areas": [
+      {
+        "areaDesc": "ndl-rudravaram Mandal ",
+        "polygon": null,
+        "circle": null,
+        "geocodes": []
+      }
+    ]
+  },
+  {
+    "name": "overpass_public_alternative",
+    "url": "https://overpass.kumi.systems/api/interpreter",
+    "query": "[out:json][timeout:15];node(around:1000,30.7046,76.7179)[amenity=hospital];out meta 10;",
+    "retrieved_at": "2026-10-31T15:38:35.735978+00:00",
+    "error": "The read operation timed out"
+  },
+  {
+    "name": "india_country_boundary",
+    "metadata_url": "https://www.geoboundaries.org/api/current/gbOpen/IND/ADM0/",
+    "retrieved_at": "2026-10-31T15:40:11.733644+00:00",
+    "error": "[WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond"
+  },
+  {
+    "name": "india_boundary_public_repository",
+    "metadata_url": "https://api.github.com/repos/wmgeolab/geoBoundaries/contents/releaseData/gbOpen/IND/ADM0",
+    "retrieved_at": "2026-10-31T15:41:14.165291+00:00",
+    "metadata_status": 200,
+    "files": [
+      "CITATION-AND-USE-geoBoundaries.txt",
+      "geoBoundaries-IND-ADM0-PREVIEW.png",
+      "geoBoundaries-IND-ADM0-all.zip",
+      "geoBoundaries-IND-ADM0-metaData.json",
+      "geoBoundaries-IND-ADM0-metaData.txt",
+      "geoBoundaries-IND-ADM0.dbf",
+      "geoBoundaries-IND-ADM0.geojson",
+      "geoBoundaries-IND-ADM0.prj",
+      "geoBoundaries-IND-ADM0.shp",
+      "geoBoundaries-IND-ADM0.shx",
+      "geoBoundaries-IND-ADM0.topojson",
+      "geoBoundaries-IND-ADM0_simplified.dbf",
+      "geoBoundaries-IND-ADM0_simplified.geojson",
+      "geoBoundaries-IND-ADM0_simplified.prj",
+      "geoBoundaries-IND-ADM0_simplified.shp",
+      "geoBoundaries-IND-ADM0_simplified.shx",
+      "geoBoundaries-IND-ADM0_simplified.topojson"
+    ],
+    "geometry_url": "https://raw.githubusercontent.com/wmgeolab/geoBoundaries/main/releaseData/gbOpen/IND/ADM0/geoBoundaries-IND-ADM0_simplified.geojson",
+    "geometry_status": 200,
+    "bytes": 132,
+    "body_prefix": "version https://git-lfs.github.com/spec/v1\noid sha256:f110789a0983447fc76aebdf901ee784698cedca86ca0157b42ce736f3206871\nsize 1550512\n",
+    "license_metadata_url": "https://raw.githubusercontent.com/wmgeolab/geoBoundaries/main/releaseData/gbOpen/IND/ADM0/geoBoundaries-IND-ADM0-metaData.json",
+    "license_metadata": "version https://git-lfs.github.com/spec/v1\noid sha256:874d85988aecd650f62be0b3bdefd0023ad9222d546fab5530abce2203965098\nsize 862\n"
+  },
+  {
+    "name": "india_boundary_lfs_public_download",
+    "retrieved_at": "2026-10-31T15:41:35.631530+00:00",
+    "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/main/releaseData/gbOpen/IND/ADM0/geoBoundaries-IND-ADM0_simplified.geojson",
+    "http_status": 200,
+    "bytes": 1550512,
+    "sha256": "f110789a0983447fc76aebdf901ee784698cedca86ca0157b42ce736f3206871",
+    "feature_count": 1,
+    "geometry_types": [
+      "MultiPolygon"
+    ],
+    "properties": [
+      {
+        "shapeName": "Puducherry",
+        "shapeISO": "IN-PY",
+        "shapeID": "90661403B68687713084743",
+        "shapeGroup": "IND",
+        "shapeType": "ADM0"
+      }
+    ],
+    "metadata_url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/main/releaseData/gbOpen/IND/ADM0/geoBoundaries-IND-ADM0-metaData.json",
+    "metadata_status": 200,
+    "metadata": {
+      "boundaryID": "IND-ADM0-90661403",
+      "boundaryISO": "IND",
+      "boundaryYear": "2011",
+      "boundaryType": "ADM1",
+      "boundarySource": "DataMeet India community, Election Commission of India",
+      "boundaryCanonical": "State / Union Territory",
+      "boundaryLicense": "Creative Commons Attribution 2.5 India (CC BY 2.5 IN)",
+      "licenseDetail": "",
+      "licenseSource": "https//github.com/datameet/maps",
+      "boundarySourceURL": "https//github.com/datameet/maps",
+      "sourceDataUpdateDate": "Tue Feb 13 12:26:25 2024",
+      "buildDate": "Feb 21, 2024",
+      "admUnitCount": "1",
+      "meanVertices": "317231.0",
+      "minVertices": "317231",
+      "maxVertices": "317231",
+      "meanPerimeterLengthKM": "32458.48348088747",
+      "maxPerimeterLengthKM": "32458.48348088747",
+      "minPerimeterLengthKM": "32458.48348088747",
+      "meanAreaSqKM": "3270089.9977705004",
+      "minAreaSqKM": "3270089.9977705004",
+      "maxAreaSqKM": "3270089.9977705004"
+    }
+  }
+]

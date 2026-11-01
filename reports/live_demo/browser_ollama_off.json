@@ -1,0 +1,344 @@
+{
+  "base": "http://127.0.0.1:8000",
+  "ollama_off": true,
+  "checks": [
+    {
+      "name": "live frontend: sidebar footer removed and branding/navigation retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "live search: Mohali",
+      "passed": true,
+      "detail": "Incident #1\nFlooding — Mohali, Punjab\nCORROBORATED\nMohali, Punjab · updated 7 min ago\nDEMO DATA\nReport #5\nFlood — Mohali, Punjab\nCONTRADICTED\nreceived Oct 31, 06:41 PM\nDEMO DATA\nReport #4\nFlood — Mohali\nCORROBORATED\nreceived Oct 31, 06:41 PM\nDEMO DATA\nReport #3\nFlood — Mohali, Punjab\nCORROBORATED\nreceived Oct 31, 06:41 PM\nDEMO DATA\nReport #2\nFlood "
+    },
+    {
+      "name": "live search: flood",
+      "passed": true,
+      "detail": "Incident #1\nFlooding — Mohali, Punjab\nCORROBORATED\nMohali, Punjab · updated 7 min ago\nDEMO DATA\nIncident #3\nFlooding — Panchkula, Haryana\nCONTRADICTED\nPanchkula, Haryana · updated 14 min ago\nDEMO DATA\nIncident #6\nFlood query — Bhutan\nCORROBORATED\nBhutan · updated 24 min ago\nReport #7\nFlood — Panchkula, Haryana\nCONTRADICTED\nreceived Oct 31, 06:41 PM"
+    },
+    {
+      "name": "live search: incident #1",
+      "passed": true,
+      "detail": "Incident #1\nFlooding — Mohali, Punjab\nCORROBORATED\nMohali, Punjab · updated 7 min ago\nDEMO DATA"
+    },
+    {
+      "name": "live search: report #4",
+      "passed": true,
+      "detail": "Report #4\nFlood — Mohali\nCORROBORATED\nreceived Oct 31, 06:41 PM\nDEMO DATA"
+    },
+    {
+      "name": "search report #4 opens stored duplicate record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "search incident #1 opens actual incident/evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hotspot inputs match actual database coordinates and duplicate flags",
+      "passed": true,
+      "detail": [
+        {
+          "anchor": [
+            30.7046,
+            76.7179
+          ],
+          "report_ids": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "incident_ids": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hotspot members equal stored non-duplicate reports and unique incidents",
+      "passed": true,
+      "detail": {
+        "reports": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "incidents": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "live hotspot clicks open correct associated incident and report",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hotspot overlay toggles with live data",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "live grid renders/toggles; custom/demo disclaimer intact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "browser assistant: Cyclone Arnab",
+      "passed": true,
+      "detail": {
+        "intent": "investigate",
+        "headline": "Live news: 5 report(s) describing an actual Cyclone Arnab event from 4 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+        "live": {
+          "ok": true,
+          "from_cache": false,
+          "query": "cyclone arnab when:30d",
+          "retrieved_at": "2026-10-31T15:09:58+00:00"
+        }
+      }
+    },
+    {
+      "name": "Ollama stopped: backend explicitly reports UNREACHABLE",
+      "passed": true,
+      "detail": {
+        "provider": "ollama",
+        "model": "qwen2.5vl:3b",
+        "endpoint": "http://127.0.0.1:11434",
+        "mode": "deferred",
+        "configured": true,
+        "recommended_models": {
+          "qwen2.5vl:3b": "Default. ~3.2 GB download. Strong at reading signboards/text (OCR) and following a JSON schema; smallest capable option for 8 GB RAM, CPU-only laptops.",
+          "gemma3:4b": "Alternative. ~3.3 GB download. Good general scene description; slightly larger memory footprint."
+        },
+        "paid": false,
+        "media_leaves_machine": false,
+        "state": "UNREACHABLE",
+        "detail": "Ollama not reachable at http://127.0.0.1:11434 (ConnectError). Install from https://ollama.com and start it.",
+        "checked_at": "2026-10-31T15:10:01+00:00"
+      }
+    },
+    {
+      "name": "Ollama stopped: live Sources & AI page shows unavailable without app failure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no browser runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "assistant": [
+    {
+      "query": "Cyclone Arnab",
+      "http_status": 200,
+      "response": {
+        "parsed": {
+          "raw": "Cyclone Arnab",
+          "normalized": "cyclone arnab",
+          "intent": "investigate",
+          "category": "cyclone_storm",
+          "place": null,
+          "window_h": 72.0,
+          "incident_id": null,
+          "norm_key": "occurrence-v2|investigate|cyclone_storm|-|72|-|arnab|cyclone|0",
+          "hazard": "cyclone",
+          "name": "arnab",
+          "historical": false
+        },
+        "generated_at": "2026-10-31T15:09:57+00:00",
+        "incidents": [],
+        "sources": [],
+        "items": [],
+        "provenance": {
+          "query_cache": "not applicable",
+          "incidents": []
+        },
+        "answer": "Searched live news (no specific place given).",
+        "summary": {
+          "headline": "Live news: 5 report(s) describing an actual Cyclone Arnab event from 4 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+          "status": null,
+          "confidence": null,
+          "reports": 0,
+          "incidents": 0,
+          "freshness": null,
+          "why": null,
+          "limitations": [
+            "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+            "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+            "0 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events.",
+            "The place could not be resolved, so nothing was investigated."
+          ],
+          "other_incidents": [],
+          "live_counts": {
+            "actual": 5,
+            "warning": 0,
+            "forecast": 2,
+            "historical": 0,
+            "unknown": 5
+          }
+        },
+        "live": {
+          "query": "cyclone arnab when:30d",
+          "connector": "Google News RSS",
+          "invoked": true,
+          "ok": true,
+          "error": null,
+          "retrieved_at": "2026-10-31T15:09:58+00:00",
+          "from_cache": false,
+          "items": [
+            {
+              "title": "Cyclone Arnab: Andhra Pradesh, Yanam (Puducherry) and Odisha (Date: 29 October 2026, Time: 08:00 IST) - ReliefWeb",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQRGNmQ1gyMUVaMG5sRmpkY2FNa3N1eldWLXQxdVZ0Y3lvaF80MGlHbXdzQjFtSmkzZ3VhMEtCT2M1X1ZDTWRCd2ItVjlaUFRqY1RjUDF1U21QMGQ1S2RjTDI5S29DSm5YQVduc0JORWN2bDRFWlFBVFZrM3c3aXhhWkpsYzdFbW85Y2QycjNUTHpxamk0ZDZEaGVEelRua1R4NG9rZFphWFlKRVRGUktIUzliNGgtdktkaDRYb0VxMVVuUGZ4?oc=5",
+              "publisher": "ReliefWeb",
+              "published": "2026-10-29T10:59:40+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Photos: Aftermath of deadly Cyclone Arnab in southern India - Al Jazeera",
+              "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNWpzNDBXZDBHZWRUZi12TldWNnR2bC02TGRSSXFQOXBDbzJuNTBsZ01PVEdhTGxfeEI0V1BQeDhfS1p2REU0V2UyTENlcGkzRjYwWkM1aFJCbS01WWlTTHN4YXBwN21rWGlHWlFTMWpXZXdoeTdQZmRkVWltSC1WbWpZcHlrTGVNVE9VNnhPanFYZmpsUWVvOWFvT0lBcTNKRmpJTjdB0gGrAUFVX3lxTFB4czd1eG4zblJ6ZHQ5S0RxV01QN2pPb0QzTmFjWHBuLUpzbHNFN3dNV0laaHg4bzZITllNQTMwSFdZTkplLVd6cExPaEJuZXJJbnAzYUJwT2ZKWUR5ZndnRVByam9JRTFPWlNHWmpFN2ZjcWtsLXRHeTlIVlpCZzg4RXh4TzBNY2Y1S3N6ZzdDTVpyN3F5OU96VmttUHl2Sk9SVDNkejQ3bHN0NA?oc=5",
+              "publisher": "Al Jazeera",
+              "published": "2026-10-29T09:14:54+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Cyclone Arnab weakens, Andhra govt announces financial assistance to affected families and businesses - News On AIR",
+              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSHNoX19UVFdsRE5Lb0M0bDFpZWJHd0hycmJ4WC1nNW1WUVc5aGxVUEFXZkhuN3BfWUtsakdtR0NSYnRRWjZrOVpSTEtkbzVPa1FtYWdCaUVZTUE5b19IOGdNV3UzRDN3U0FWYWdjMW43NldzZ2k0TzlOdzg4cTI2V0VkckQ3TTIwUmo3eS1wVmlmaVFQdkhoZ2Nndkg3VlFrXy1udGh1enU4RFhINlljOUdJR3lqSXRGcm82MUJYM1J4Yzc5ay00aF85bWxpendwZVBsdVUzXy01UU5xMGN3X2pYbmxQV1NSSmQwbndfRmJtcS11TC1GYw?oc=5",
+              "publisher": "News On AIR",
+              "published": "2026-10-28T22:09:33+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Hunker down: On Cyclone Arnab, its landfall - The Hindu",
+              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVjliT2JCdVNmYmg1SXNLUXhoMFItWTdlRVU3X205S1dlemdvOU5IeHVZRndIYzh2c3dzbDFnT0NLVVBZek5IU0pBNWpFVk9Vb2dMUTBGUGhRakNNN1E5OGZiZVVzMVlCNDZ4d2NSNURRQXZDelc5YVNqcmlmRWszQWVuSHBlRDMxOUJCYXdOWl9uOS1LUHBOUVozUGh5WEZpQWJreXFEc9IBrgFBVV95cUxPVWVNclNZeGE2cWNPSGtFMkllVnRUdUVZUFVJZ3llM1FtZG1SczNwLXprbG9vXzRQT3N3S29xZHo3WHhoQWF1d3dVbmJzdWRNZkFYbUtJZTV0SkJhZl82NUFPU09YaEZ0NDFuLU4xOWctSEpHcjQ3U3g5VzUzZ2R2cmhVS2JXWUcwQkhhblNUcXM1MjdYRENPZFYxWTFQN1J2WHJqVE5VLUNwblZ3Y1E?oc=5",
+              "publisher": "The Hindu",
+              "published": "2026-10-28T18:50:00+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Cyclone Arnab: Coastal West Bengal districts likely to receive heavy rain - Down To Earth",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVm1JVDRlWkt0dVJPWFQ5YnZMVi1BN3FFNTZHZWVtUW1NYzl3UHdfWUo1NFB2czdEX3VydjBDRGpiX1oxY0ViZlNVYndpU0ZvYmFEdVhQbVIyMV9rMmNZaG9HQTNIQ3c3bUx2V0JqZEJ0NktuT1ZHMmVoODdCRC1hQXdoU3o5ck5PWnZjOE51dTV1YUtCVjJBdDhpVm1nd3hsWUU4MjYtZGlHYkFDdlBCb0VVTmlmVWhZVU9lZ2p30gHLAUFVX3lxTE9jQ2MyTXhTVFF4OTJxcW1rOWlocFJxVXpzcUxjR1hQdUNHeFc4LXZFQkhlUjIwVTdka3phd1VmMlBfcWc1cGpyT2dnQ2lYOXNmRU5SQ0h0UkR2dmpoRlZYNUs0LXFWbEhNQXFBeS1BWldKNThfdGE4c2hFN3hET3ZscDVsUkkxYlhDMkxpdlY2V0t1UzhJYXJYNXBGTE5FRnY2X0xYTGMwUHp5VUxyM0haT2FnQWM3X3dBcUQxRlFZZGhzQXVxX3NUQlo4?oc=5",
+              "publisher": "Down To Earth",
+              "published": "2026-10-28T11:45:24+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Three killed, thousands evacuated as Cyclone Arnab hits eastern India - Reuters",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZlJDOVctdlFxT0xCaFRzd1dPMWJORzREWDItVWtGcHZyVGREWlRBeEd3VFV2Q1VzUjFSdkxqazFwekIxU181ZDdwVXBDTV9jU3Q2a0FHa0hVblVaSFpoaVhNMTdlYThKMUNHNnl5M3J2ZFp3MGlpRENFaklRTjJrajRiLWVoOXEwMUY4NFY2QTBFc2hTNW51QjJHSVNXbVNnTlJIbU9WOXNRZ1lOMDhJRWR6RzdiQjN5bU8wZFpn?oc=5",
+              "publisher": "Reuters",
+              "published": "2026-10-28T09:34:57+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Situation Report: Severe Cyclonic Storm Arnab (29 October 2026) - ReliefWeb",
+              "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSVJjMHFwVWM0czd0X0dGUk5EOFZLaF9qN05VUkotcFRCdHFwWGRhai1Xa1lhZkI3REhpWTF2UTRYcGFuX2NiVm43cmpmWEFrVFp1TXZ2TjJycEtydURZYVRDZTY3NHN6NDZybHVfdUNOdEJUUEpCRTg2MGJ3aWJDcGdubnZ2LW5mMjl2THFBLU1ncWJqU3pDRDhkcw?oc=5",
+              "publisher": "ReliefWeb",
+              "published": "2026-10-29T12:51:37+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "At least 3 dead after Cyclone Arnab hits southern India - Al Jazeera",
+              "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdGtkR2NQb1VrRW1neFNuUk92WGZZeGgtcXRodUZ5eG5BZ21SajNVTEE3bTFLZUtibGxZZ2xyemxXZkk0SlAxaHJNdEw1QUpNT2tYUVE3RUhrR1NKNm5rWi1kYklaM1lMZVVmdG9idG0tcWh0YlJaVVAyUjhyb2VGWWVMSlU1YTZXeHNscGkxTzF4OXBQUjRYc2YyONIBoAFBVV95cUxQNWJDY0FXb0JSYU5tajlIM0dDWmU2dWlJMzNPLXNTeEU1MzFoQjhRd1M1a2JhTUxpcmctTkdGVkxiRUFHcEdXYnFzb1dBSHdxVV9LWktfdnh4Y0RONkwwU3pQWHZVQXdlM2U0bXdyeExLUVhmd2gxVDVlWFBHZ2d4Z0xXTmFOMl9kZlk3X21jc3VKYnl2VWxUVmlNZmhwQU5E?oc=5",
+              "publisher": "Al Jazeera",
+              "published": "2026-10-28T11:16:17+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Double trouble in Bay of Bengal after cyclone Arnab? Another storm could head towards Odisha - Down To Earth",
+              "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeFpnaTh2LWpoTzlSM3hoUHZUb2FybHZzYTdjTXBHNHBMbVdnQ1JRSmdQNUdzZTVaYzI0NEFjVWlXaWYyQzdxU3JKYzdNYU1zWVNiTUU4d2hsSEFYOU0tLVVJVThLU1U0SkctZl9KczFzVUV0cDFMX0ZSYWdYWDk0TFQ0NzA4RjY5X3JnSkNFbDdFY0FBNWZDQmhkYjN3cjNxOEhYRzJHQktRcXZ5am1VcFdXOFBrNkwzSl9YcVJ4X3RHaHppNm9LRVJTWmsxT094R01v0gHgAUFVX3lxTE4wa0szSjF2a0pqN3ZfaTlIWkNIQ0VYTmZpTHU2SF83TDVNaXpCNHBDckNFXy1jYl9iMVZUMXcxY1RTTzBDdXJQWmRYd09Gb0ZIaDZOd0VxdzhiLTh0YnUxQk05RW0wUGlXNVpoeWliaEhrZ2R1OTFia0ljR2ticXA4NHUyZzhkRm4zbnJVT04xNEFqRUdPRjFkU3BISC1DS0FjN2RLNGlrLTg5VV9UMGtOa0dZZklDM3VOYzI3Q0JycTFIVTFQVXFsTnZUYkhLcFVZUkR0dTZDSUc5bDliamlI?oc=5",
+              "publisher": "Down To Earth",
+              "published": "2026-10-27T12:31:40+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Cyclone Arnab weakens after landfall along Andhra Pradesh-Yanam coast - News On AIR",
+              "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRVFyTXNZV0J3U1Q2dl9ZeTBDWDVaT280Y2phMGMzVUpVMTdXU1dabFBCS0NXV2huaUtMQ1hubl9hMkk4am44S1RWZzd3dTRXVEdYNFNMcUZZVFNVeURTQWx4dWM1eFpHemFPRHhwZnRNZGF5S1BPRU5kM0hsUjBHblhwV2hrOE1yZ1R2a2RsdHYwcUlkM0ZyZTMzWQ?oc=5",
+              "publisher": "News On AIR",
+              "published": "2026-10-28T06:32:00+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Cyclone Arnab: Andhra Pradesh, Yanam (Puducherry) and Odisha (Date: 30 October 2026, Time: 08:00 IST) - ReliefWeb",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeHRCaFZ1SC0ycTNrWjk1YmU1dnJYQmRBNFNVVzVoODJFYjhra3prUHd1aFpOQ1ZBNVhOZmgxMGZjYjBJcU1DMHBYVU84aWNDOWlLYkxtVV9SWHNPdjExY0NqZTA5WHZJa3NRSkFDYVU0WjhRQTd2Y1ExaUt0NERTd3VfaHpydG9uOXh4NVNpeFU1MGVKVEIzSTBtc2FNdTJkR3FMNkU5Y0d2djdCRXJhLU9IZk5xdVRJUFFwQjBsUGh4OHE3?oc=5",
+              "publisher": "ReliefWeb",
+              "published": "2026-10-30T12:46:55+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Daily weather tracker: Cyclone Arnab brings heavy rain to Andhra Pradesh, Odisha and Chhattisgarh - Down To Earth",
+              "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPelVySm82cVVfODJKLXhkLUFveGZFYjR2YzB4eFYyalloQUdBSFlpV3FEMUpqbzdDQUlWbjRNSjVxeW9sV282dnNpd3R0cmplcjB5SE45cHlUeUFnRHE3SWVNSE90cnZLNS1pN0FQZ3lTWkxsMkdrTk9wNHJkQWl4N0tNWi1GMG9oWEhVYjBMN1Z2aXdzeXN5RVVHYzRjM0NFYmV3eXBIb1FGTlowYnNaSGhadzY1blkxQmZ0bWZtWW1uTlJRd0RBN254dWptMm1mem83cExJWnPSAeYBQVVfeXFMTjRXUGZZMUMtT2VnSG5DTXRwQjR6NF8yZ0Rob2c3anRPNFg3U3BJS2V0cGY1Ym8wUUJqVzB2ZmJXM2pPNDhyTDU4VlFfZHplZVFxUm4wc0pBYmpjS3F6LVVFdmh2TDZSaHNGTEo1TGtSTm5XeGhybElZSkxRSkJYWlZ2dlhvOTE1eVFkaDJ0UDE1X1FpMDZjalJxUVhRTzlQUG5MV2xFNmNsVmZnaFhIWmk2b0tGNEoxQ2NVQzZIT2VydXQ4MUZsM3FTVnZ0V095emM1RFZ0NjNWeDVIRHRqczM2NVJ0dGc?oc=5",
+              "publisher": "Down To Earth",
+              "published": "2026-10-28T07:34:30+00:00",
+              "classification": "unknown"
+            }
+          ],
+          "summary": {
+            "headline": "Live news: 5 report(s) describing an actual Cyclone Arnab event from 4 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+            "counts": {
+              "actual": 5,
+              "warning": 0,
+              "forecast": 2,
+              "historical": 0,
+              "unknown": 5
+            },
+            "independent_publishers_actual": 4,
+            "limitations": [
+              "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+              "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+              "0 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events."
+            ]
+          }
+        },
+        "context": {
+          "category": "cyclone_storm",
+          "place": null,
+          "name": "arnab",
+          "hazard": "cyclone",
+          "historical": false
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "stored_incident_ids": [
+    1,
+    2,
+    4,
+    3,
+    6,
+    5,
+    7
+  ],
+  "stored_report_ids": [
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "hotspots": [
+    {
+      "anchor": [
+        30.7046,
+        76.7179
+      ],
+      "report_ids": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "incident_ids": [
+        1
+      ]
+    }
+  ]
+}

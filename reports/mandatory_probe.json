@@ -1,0 +1,424 @@
+{
+  "retrieved_at": "2026-10-31T15:36:05.118838+00:00",
+  "credential_presence": {
+    "NASA_FIRMS_MAP_KEY": false,
+    "COPERNICUS_CLIENT_ID": false,
+    "COPERNICUS_CLIENT_SECRET": false,
+    "NASA_EARTHDATA_USERNAME": false,
+    "NASA_EARTHDATA_PASSWORD": false,
+    "RELIEFWEB_APPNAME": false
+  },
+  "probes": [
+    {
+      "name": "firms_documentation",
+      "method": "GET",
+      "url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 25670,
+      "redirect": null,
+      "last_modified": null,
+      "retry_after": null,
+      "response_summary": "  \n<!DOCTYPE html>\n<!-- saved from url=(0027)https://earthdata.nasa.gov/ -->\n<html lang=\"en\" xmlns:fb=\"http://ogp.me/ns/fb#\" class=\"\">\n    <head>  \n        <!-- Google Tag Manager -->\n            <scr"
+    },
+    {
+      "name": "copernicus_catalog_without_credentials",
+      "method": "POST",
+      "url": "https://sh.dataspace.copernicus.eu/catalog/v1/search",
+      "http_status": 401,
+      "content_type": "application/json",
+      "bytes": 161,
+      "redirect": null,
+      "last_modified": null,
+      "retry_after": null,
+      "structure": [
+        "code",
+        "description"
+      ],
+      "response_summary": "{'code': 401, 'description': 'You are not authorized! Please provide a valid access token within the header [Authorization: Bearer <accessToken>] of your request.'}"
+    },
+    {
+      "name": "copernicus_process_without_credentials",
+      "method": "POST",
+      "url": "https://sh.dataspace.copernicus.eu/api/v1/process",
+      "http_status": 401,
+      "content_type": "application/json",
+      "bytes": 222,
+      "redirect": null,
+      "last_modified": null,
+      "retry_after": null,
+      "structure": [
+        "error"
+      ],
+      "response_summary": "{'error': {'status': 401, 'reason': 'Unauthorized', 'message': 'You are not authorized! Please provide a valid access token within the header [Authorization: Bearer <accessToken>] of your request.', 'code': 'COMMON_UNAUTHORIZED'}}"
+    },
+    {
+      "name": "imerg_early_gis_directory",
+      "method": "GET",
+      "url": "https://jsimpsonhttps.pps.eosdis.nasa.gov/imerg/gis/early/",
+      "http_status": 401,
+      "content_type": "text/html; charset=iso-8859-1",
+      "bytes": 381,
+      "redirect": null,
+      "last_modified": null,
+      "retry_after": null,
+      "response_summary": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>401 Unauthorized</title>\n</head><body>\n<h1>Unauthorized</h1>\n<p>This server could not verify that you\nare authorized to access th"
+    },
+    {
+      "name": "imerg_cmr_metadata",
+      "method": "GET",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.json?short_name=GPM_3IMERGHHE&version=07&bounding_box=68,6,98,38&page_size=1&sort_key=-start_date",
+      "http_status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 4700,
+      "redirect": null,
+      "last_modified": null,
+      "retry_after": null,
+      "structure": [
+        "feed"
+      ],
+      "record_count": 1,
+      "sample": [
+        {
+          "producer_granule_id": "3B-HHR-E.MS.MRG.3IMERG.20261031-S093000-E095959.0570.V07C.HDF5",
+          "boxes": [
+            "-90 -180 90 180"
+          ],
+          "time_start": "2026-10-31T09:30:00.000Z",
+          "updated": "2026-10-31T14:24:22.000Z",
+          "dataset_id": "GPM IMERG Early Precipitation L3 Half Hourly 0.1 degree x 0.1 degree V07 (GPM_3IMERGHHE)",
+          "data_center": "GES_DISC",
+          "title": "GPM_3IMERGHHE.07:3B-HHR-E.MS.MRG.3IMERG.20261031-S093000-E095959.0570.V07C.HDF5",
+          "coordinate_system": "CARTESIAN",
+          "day_night_flag": "UNSPECIFIED",
+          "time_end": "2026-10-31T09:59:59.999Z",
+          "id": "G4395899661-GES_DISC",
+          "original_format": "ECHO10",
+          "granule_size": "6.662199974060059",
+          "browse_flag": false,
+          "collection_concept_id": "C2723758340-GES_DISC",
+          "online_access_flag": true,
+          "links": [
+            {
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+              "title": "Download 3B-HHR-E.MS.MRG.3IMERG.20261031-S093000-E095959.0570.V07C.HDF5",
+              "hreflang": "en-US",
+              "href": "https://data.gesdisc.earthdata.nasa.gov/data/GPM_L3/GPM_3IMERGHHE.07/2026/304/3B-HHR-E.MS.MRG.3IMERG.20261031-S093000-E095959.0570.V07C.HDF5"
+            },
+            {
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+              "title": "This link provides direct download access via S3 to the granule",
+              "hreflang": "en-US",
+              "href": "s3://gesdisc-cumulus-prod-protected/GPM_L3/GPM_3IMERGHHE.07/2026/304/3B-HHR-E.MS.MRG.3IMERG.20261031-S093000-E095959.0570.V07C.HDF5"
+            },
+            {
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+              "title": "api endpoint to retrieve temporary credentials valid for same-region direct s3 access (VIEW RELATED INFORMATION)",
+              "hreflang": "en-US",
+              "href": "https://data.gesdisc.earthdata.nasa.gov/s3credentials"
+            },
+            {
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/service#",
+              "title": "OPeNDAP request URL (GET DATA : OPENDAP DATA)",
+              "hreflang": "en-US",
+              "href": "https://opendap.earthdata.nasa.gov/collections/C2723758340-GES_DISC/granules/GPM_3IMERGHHE.07%3A3B-HHR-E.MS.MRG.3IMERG.20261031-S093000-E095959.0570.V07C.HDF5"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+              "hreflang": "en-US",
+              "href": "https://disc.gsfc.nasa.gov/datacollection/GPM_3IMERGHHE_07.html"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+              "hreflang": "en-US",
+              "href": "https://cmr.earthdata.nasa.gov/virtual-directory/collections/C2723758340-GES_DISC/temporal"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/service#",
+              "hreflang": "en-US",
+              "href": "https://cmr.earthdata.nasa.gov/virtual-directory/collections/C2723758340-GES_DISC/temporal"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+              "hreflang": "en-US",
+              "href": "https://search.earthdata.nasa.gov/search/granules?p=C2723758340-GES_DISC"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://arthurhou.pps.eosdis.nasa.gov/Documents/IMERG_V07_ATBD_final.pdf"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://docserver.gesdisc.eosdis.nasa.gov/public/project/GPM/MorphingInV06IMERG.pdf"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://gpm.nasa.gov/resources/documents/imerg-v07-release-notes"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://arthurhou.pps.eosdis.nasa.gov/Documents/IMERG_TechnicalDocumentation_final.pdf"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://docserver.gesdisc.eosdis.nasa.gov/public/project/GPM/IMERGV06_QI.pdf"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://gpm1.gesdisc.eosdis.nasa.gov/data/GPM_L3/doc/README.GPM.pdf"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://gpmweb2https.pps.eosdis.nasa.gov/tsdis/AB/docs/gpm_anomalous.html"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+              "hreflang": "en-US",
+              "href": "https://gpm.nasa.gov"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "https://journals.ametsoc.org/doi/full/10.1175/JAM2173.1"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "http://journals.ametsoc.org/doi/10.1175/JHM-D-11-022.1"
+            },
+            {
+              "inherited": true,
+              "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+              "hreflang": "en-US",
+              "href": "ftp://gpmweb2.pps.eosdis.nasa.gov/pub/GPMfilespec/filespec.GPM.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gibs_capabilities",
+      "method": "GET",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/WMTSCapabilities.xml",
+      "http_status": 200,
+      "content_type": "text/xml; charset=UTF-8",
+      "bytes": 5324057,
+      "redirect": null,
+      "last_modified": null,
+      "retry_after": null,
+      "imerg_layers": [
+        {
+          "id": "IMERG_Precipitation_Rate",
+          "title": "Precipitation Rate (IMERG)",
+          "times": [
+            "2000-06-01/2025-10-22/P1D",
+            "2025-10-30/2026-02-02/P1D",
+            "2026-02-04/2026-02-09/P1D",
+            "2026-02-12/2026-05-24/P1D",
+            "2026-05-27/2026-10-30/P1D"
+          ],
+          "resources": [
+            {
+              "resourceType": "tile",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/IMERG_Precipitation_Rate/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+              "format": "image/png"
+            },
+            {
+              "resourceType": "tile",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/IMERG_Precipitation_Rate/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+              "format": "image/png"
+            },
+            {
+              "resourceType": "tile",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/IMERG_Precipitation_Rate/default/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+              "format": "image/png"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate/default/{TileMatrixSet}/{BBOX}/{TimeStart}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate/default/{TileMatrixSet}/all/{TimeStart}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate/default/{TileMatrixSet}/all/--{TimeEnd}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate/default/{TileMatrixSet}/all/{TimeStart}--{TimeEnd}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate/default/{TileMatrixSet}/{BBOX}/all.xml",
+              "format": "text/xml"
+            }
+          ],
+          "matrixsets": [
+            "2km"
+          ]
+        },
+        {
+          "id": "IMERG_Precipitation_Rate_30min",
+          "title": "Precipitation Rate, 30-minute avg. (IMERG) ",
+          "times": [
+            "1998-01-01T00:00:00Z/2025-09-13T19:30:00Z/PT30M",
+            "2025-09-13T20:30:00Z/2026-01-22T00:00:00Z/PT30M",
+            "2026-01-22T01:00:00Z/2026-02-10T00:00:00Z/PT30M",
+            "2026-02-10T01:00:00Z/2026-10-31T09:30:00Z/PT30M"
+          ],
+          "resources": [
+            {
+              "resourceType": "tile",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/IMERG_Precipitation_Rate_30min/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+              "format": "image/png"
+            },
+            {
+              "resourceType": "tile",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/IMERG_Precipitation_Rate_30min/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+              "format": "image/png"
+            },
+            {
+              "resourceType": "tile",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/IMERG_Precipitation_Rate_30min/default/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+              "format": "image/png"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate_30min/default/{TileMatrixSet}/{BBOX}/{TimeStart}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate_30min/default/{TileMatrixSet}/all/{TimeStart}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate_30min/default/{TileMatrixSet}/all/--{TimeEnd}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate_30min/default/{TileMatrixSet}/all/{TimeStart}--{TimeEnd}.xml",
+              "format": "text/xml"
+            },
+            {
+              "resourceType": "Domains",
+              "template": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/IMERG_Precipitation_Rate_30min/default/{TileMatrixSet}/{BBOX}/all.xml",
+              "format": "text/xml"
+            }
+          ],
+          "matrixsets": [
+            "2km"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "copernicus_process_documented_without_credentials",
+      "method": "POST",
+      "url": "https://sh.dataspace.copernicus.eu/process/v1",
+      "retrieved_at": "2026-10-31T15:37:16.654232+00:00",
+      "http_status": 401,
+      "content_type": "application/json",
+      "bytes": 222,
+      "redirect": null,
+      "response_summary": "{\"error\":{\"status\":401,\"reason\":\"Unauthorized\",\"message\":\"You are not authorized! Please provide a valid access token within the header [Authorization: Bearer <accessToken>] of your request.\",\"code\":\"COMMON_UNAUTHORIZED\"}}"
+    },
+    {
+      "name": "reliefweb_reports_without_appname",
+      "method": "GET",
+      "url": "https://api.reliefweb.int/v2/reports?limit=1&filter[field]=country.iso3&filter[value]=ind",
+      "retrieved_at": "2026-10-31T15:37:17.680052+00:00",
+      "http_status": 400,
+      "content_type": "application/json",
+      "bytes": 105,
+      "redirect": null,
+      "response_summary": "{\"status\":400,\"time\":17,\"error\":{\"type\":\"BadRequestHttpException\",\"message\":\"Missing appname parameter\"}}"
+    },
+    {
+      "name": "imerg_opendap_metadata_without_auth",
+      "method": "GET",
+      "url": "https://opendap.earthdata.nasa.gov/collections/C2723758340-GES_DISC/granules/GPM_3IMERGHHE.07%3A3B-HHR-E.MS.MRG.3IMERG.20261031-S093000-E095959.0570.V07C.HDF5.dds",
+      "retrieved_at": "2026-10-31T15:37:18.489405+00:00",
+      "http_status": 302,
+      "content_type": null,
+      "bytes": 0,
+      "redirect": "/login/urs",
+      "response_summary": ""
+    },
+    {
+      "name": "gibs_imerg_india_render",
+      "method": "GET",
+      "url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=IMERG_Precipitation_Rate_30min&STYLES=&FORMAT=image/png&TRANSPARENT=true&SRS=EPSG:4326&BBOX=68,6,98,38&WIDTH=480&HEIGHT=512&TIME=2026-10-31T09:30:00Z",
+      "retrieved_at": "2026-10-31T15:37:19.238029+00:00",
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 22206,
+      "redirect": null,
+      "saved": "reports\\imerg_public_india.png",
+      "bbox": [
+        68,
+        6,
+        98,
+        38
+      ],
+      "observation_time": "2026-10-31T09:30:00Z",
+      "product": "IMERG_Precipitation_Rate_30min",
+      "interpretation": "Visualization only, not quantitative precipitation or flood confirmation",
+      "image_validation": {
+        "size": [
+          480,
+          512
+        ],
+        "nontransparent_pixels": 20753,
+        "colors": 146
+      }
+    },
+    {
+      "name": "firms_public_viirs-snpp-csv",
+      "url": "https://firms.modaps.eosdis.nasa.gov/data/active_fire/viirs-snpp-csv/South_Asia_24h.csv",
+      "retrieved_at": "2026-10-31T15:38:29.484831+00:00",
+      "http_status": 404,
+      "content_type": "application/json",
+      "bytes": 204,
+      "response_summary": "{\"detail\":\"The file 'South_Asia_24h.csv' cannot be found for group 'firms' bucket 'data'.\",\"instance\":null,\"status\":404,\"title\":\"File Not Found\",\"type"
+    },
+    {
+      "name": "firms_public_modis-c6.1-csv",
+      "url": "https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1-csv/South_Asia_24h.csv",
+      "retrieved_at": "2026-10-31T15:38:31.059856+00:00",
+      "http_status": 404,
+      "content_type": "application/json",
+      "bytes": 204,
+      "response_summary": "{\"detail\":\"The file 'South_Asia_24h.csv' cannot be found for group 'firms' bucket 'data'.\",\"instance\":null,\"status\":404,\"title\":\"File Not Found\",\"type"
+    }
+  ]
+}

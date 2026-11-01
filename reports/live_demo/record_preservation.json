@@ -1,0 +1,73 @@
+{
+  "reports": {
+    "original_count": 8,
+    "current_count": 8,
+    "changed_original_fields": []
+  },
+  "incidents": {
+    "original_count": 7,
+    "current_count": 7,
+    "changed_original_fields": [
+      {
+        "id": 5,
+        "fields": [
+          "last_evidence_check"
+        ]
+      },
+      {
+        "id": 6,
+        "fields": [
+          "last_evidence_check"
+        ]
+      },
+      {
+        "id": 7,
+        "fields": [
+          "last_evidence_check"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "original_count": 58,
+    "current_count": 87,
+    "changed_original_fields": []
+  },
+  "assessments": {
+    "original_count": 31,
+    "current_count": 31,
+    "changed_original_fields": []
+  },
+  "review_history": {
+    "original_count": 0,
+    "current_count": 0,
+    "changed_original_fields": []
+  },
+  "integrity_check": "ok",
+  "legacy_incidents": [
+    {
+      "id": 5,
+      "title": "Cyclone Storm query — Orissa",
+      "status": "CORROBORATED",
+      "confidence_score": 55.0,
+      "center_lat": 20.5431241,
+      "center_lon": 84.6897321
+    },
+    {
+      "id": 6,
+      "title": "Flood query — Bhutan",
+      "status": "CORROBORATED",
+      "confidence_score": 70.0,
+      "center_lat": 33.0204804,
+      "center_lon": 75.6458366
+    },
+    {
+      "id": 7,
+      "title": "Fire query — Delhi",
+      "status": "CORROBORATED",
+      "confidence_score": 70.0,
+      "center_lat": 28.6328027,
+      "center_lon": 77.2197713
+    }
+  ]
+}

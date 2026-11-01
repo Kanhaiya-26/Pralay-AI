@@ -1,0 +1,1215 @@
+{
+  "base": "http://127.0.0.1:8000",
+  "ollama_off": false,
+  "checks": [
+    {
+      "name": "live frontend: sidebar footer removed and branding/navigation retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "live search: Mohali",
+      "passed": true,
+      "detail": "Incident #1\nFlooding — Mohali, Punjab\nCORROBORATED\nMohali, Punjab · updated 6 min ago\nDEMO DATA\nReport #5\nFlood — Mohali, Punjab\nCONTRADICTED\nreceived Oct 31, 06:41 PM\nDEMO DATA\nReport #4\nFlood — Mohali\nCORROBORATED\nreceived Oct 31, 06:41 PM\nDEMO DATA\nReport #3\nFlood — Mohali, Punjab\nCORROBORATED\nreceived Oct 31, 06:41 PM\nDEMO DATA\nReport #2\nFlood "
+    },
+    {
+      "name": "live search: flood",
+      "passed": true,
+      "detail": "Incident #1\nFlooding — Mohali, Punjab\nCORROBORATED\nMohali, Punjab · updated 6 min ago\nDEMO DATA\nIncident #3\nFlooding — Panchkula, Haryana\nCONTRADICTED\nPanchkula, Haryana · updated 12 min ago\nDEMO DATA\nIncident #6\nFlood query — Bhutan\nCORROBORATED\nBhutan · updated 22 min ago\nReport #7\nFlood — Panchkula, Haryana\nCONTRADICTED\nreceived Oct 31, 06:41 PM"
+    },
+    {
+      "name": "live search: incident #1",
+      "passed": true,
+      "detail": "Incident #1\nFlooding — Mohali, Punjab\nCORROBORATED\nMohali, Punjab · updated 6 min ago\nDEMO DATA"
+    },
+    {
+      "name": "live search: report #4",
+      "passed": true,
+      "detail": "Report #4\nFlood — Mohali\nCORROBORATED\nreceived Oct 31, 06:41 PM\nDEMO DATA"
+    },
+    {
+      "name": "search report #4 opens stored duplicate record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "search incident #1 opens actual incident/evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hotspot inputs match actual database coordinates and duplicate flags",
+      "passed": true,
+      "detail": [
+        {
+          "anchor": [
+            30.7046,
+            76.7179
+          ],
+          "report_ids": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "incident_ids": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hotspot members equal stored non-duplicate reports and unique incidents",
+      "passed": true,
+      "detail": {
+        "reports": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "incidents": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "live hotspot clicks open correct associated incident and report",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hotspot overlay toggles with live data",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "live grid renders/toggles; custom/demo disclaimer intact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "browser assistant: Was there an avalanche in Nepal?",
+      "passed": true,
+      "detail": {
+        "intent": "investigate",
+        "headline": "Live news: 1 report(s) describing an actual avalanche in Nepal event from 1 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+        "live": {
+          "ok": true,
+          "from_cache": false,
+          "query": "avalanche nepal when:30d",
+          "retrieved_at": "2026-10-31T15:08:43+00:00"
+        }
+      }
+    },
+    {
+      "name": "live backend uses occurrence-v2 and blocks Nepal from India incidents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "browser assistant: Check again, I heard there was one.",
+      "passed": true,
+      "detail": {
+        "intent": "investigate",
+        "headline": "Live news: 1 report(s) describing an actual avalanche in Nepal event from 1 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+        "live": {
+          "ok": true,
+          "from_cache": false,
+          "query": "avalanche nepal when:30d",
+          "retrieved_at": "2026-10-31T15:08:44+00:00"
+        }
+      }
+    },
+    {
+      "name": "browser assistant: Cyclone Arnab",
+      "passed": true,
+      "detail": {
+        "intent": "investigate",
+        "headline": "Live news: 5 report(s) describing an actual Cyclone Arnab event from 4 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+        "live": {
+          "ok": true,
+          "from_cache": false,
+          "query": "cyclone arnab when:30d",
+          "retrieved_at": "2026-10-31T15:08:45+00:00"
+        }
+      }
+    },
+    {
+      "name": "browser assistant: Was that an actual incident or just a warning?",
+      "passed": false,
+      "detail": {
+        "intent": "list",
+        "headline": "7 incident(s) in shared intelligence.",
+        "live": {
+          "ok": null,
+          "from_cache": null,
+          "query": null,
+          "retrieved_at": null
+        }
+      }
+    },
+    {
+      "name": "no browser runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "assistant": [
+    {
+      "query": "Was there an avalanche in Nepal?",
+      "http_status": 200,
+      "response": {
+        "parsed": {
+          "raw": "Was there an avalanche in Nepal?",
+          "normalized": "was there an avalanche in nepal",
+          "intent": "investigate",
+          "category": "other",
+          "place": "nepal",
+          "window_h": 72.0,
+          "incident_id": null,
+          "norm_key": "occurrence-v2|investigate|other|nepal|72|-|-|avalanche|0",
+          "hazard": "avalanche",
+          "name": null,
+          "historical": false
+        },
+        "generated_at": "2026-10-31T15:08:42+00:00",
+        "incidents": [],
+        "sources": [],
+        "items": [],
+        "provenance": {
+          "query_cache": "hit",
+          "cached_at": "2026-10-31T15:04:42+00:00",
+          "hit_count": 1,
+          "note": "Reused from shared intelligence; place and event identity revalidated. Incident evidence retrieval was not repeated.",
+          "geocode": null,
+          "incidents": [],
+          "out_of_scope": "'Nepal' is outside India — PRALAY covers India only.",
+          "new_incidents_since_cache": []
+        },
+        "answer": "'Nepal' is outside India — PRALAY covers India only. Not mapped on PRALAY's India grid; live news searched instead.",
+        "summary": {
+          "headline": "Live news: 1 report(s) describing an actual avalanche in Nepal event from 1 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+          "status": null,
+          "confidence": null,
+          "reports": 0,
+          "incidents": 0,
+          "freshness": null,
+          "why": null,
+          "limitations": [
+            "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+            "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+            "2 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events.",
+            "Only one independent publisher — insufficient independent corroboration.",
+            "The place could not be resolved, so nothing was investigated."
+          ],
+          "other_incidents": [],
+          "live_counts": {
+            "actual": 1,
+            "warning": 2,
+            "forecast": 2,
+            "historical": 0,
+            "unknown": 7
+          }
+        },
+        "live": {
+          "query": "avalanche nepal when:30d",
+          "connector": "Google News RSS",
+          "invoked": true,
+          "ok": true,
+          "error": null,
+          "retrieved_at": "2026-10-31T15:08:43+00:00",
+          "from_cache": false,
+          "items": [
+            {
+              "title": "Nepal avalanche kills at least 15 expedition workers - Al Jazeera",
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZ3MyUUxMLVN4N01fY2NrQk5hRXp4bDRWcGQ2UU5jclppQ0VWTFJYT3lRcHFxYmhYSy1QcHdRS2tIVkZEdG9rS0lfTjd3eldTSTdiRTgzQUlPcVdOZW4ycWFOUWNMd2xTZkk2bUJ3VWdoandSdWwxekE0eG53NzRxUkFGbWVudUlrRDVPRzJBMnZoSGVodFl3NtIBngFBVV95cUxPQUhWZ1JWWF9XWGcyZURsTDYxR09Kc1BiaDJsQy04Ql9pNTQxM0l5ZzJxMXlPYXRlSTVCaUlRYTNqYXB1aEtuOHRQVDNnUjJQVzFsdV9lMXBnc2xweUZBb3ZwLWpSbkRQdGk3am4zRGV5SkZBNkxYbTZveHJkRVF1SzNJY1pxcHEyWi03UjVoVE5FamphMXBGX3kxU0w3UQ?oc=5",
+              "publisher": "Al Jazeera",
+              "published": "2026-10-02T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "'Massive rock avalanche likely caused Nepal flood' - The Times of India",
+              "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSnJaY0U4LWpDeFI2alhya1llLXNqa3JNLTJBTE5jWXl4c3dmT0NHNzhHSDFZeFhIWnREYWtYSFU5V0Q5YVdYeFVXbU0wRlpZZ2FNMExPVy11SWRHblJUcVh0MExsczlxMTIzQVJJQUt0MkQxdFBEeE9nV0VGT1RWVWVzeGdiczBRLU5RVjBxeXRHNFozMDBVMHJITG42a3JLWGxVTWZJS1FkdGVydDlNMEFPTGtKc0ZreUp5Q3dEaGhVM21VYkHSAcsBQVVfeXFMT2ZDa0dxcWh5SklvQmRYMUVueUFWT2tKSzk0NlVnQlJJbXFGX3FoVll3ZmIycUFWaEJzcDJ4YmN3ZUVxSUwwb0xjWTAtNE42R1VGTHRyX1c2S3ZHWXpzclhMNlZmUFBjVThvWHpMdHZNVDZqQ0E4YzlOak1FM0ZOZVk0eEFaSkNIaGdmcjBtZkQ4X3BkSUh1LTFZcmViTDB6cmV3WEJXdkRubEpmaTdSdXVqc01kMVdTTTZvUmxvRUJIUGgwVHJfWGI2cE0?oc=5",
+              "publisher": "The Times of India",
+              "published": "2026-10-13T07:00:00+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Nepal Halts Himalayan Trekking Permits Amid Avalanche Risks - NDTV",
+              "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQb2MzS3luS3RDNnlPZDl5Sk90RmJyX2R6QXUza1lhUms2Y2hUUXUtU1hkQmNlNjdHRGIxOWltaV82cE5QcE00M3FHeWktMEVQRjRfVjN0WkhXZ2txN3pXMDhPaVRQRWluUUVBWDlYVEoyQVRYbEFsclYyX25ZamUycXIzLXdZNFJpckEwaDhERkdQQnRjX2VjUXdZTVVFYmJGV3fSAaoBQVVfeXFMTVlTdi1kbmUzeUk5RGpJSUJWRW53aTJ4Yl9rZmpnbWZNS2JWQ2JUTzFyeHFNYzNuaFFCaUpEVjd6aXBOQWxCeFVCcjZFVGV0aWhzc0g5d3c4MHZfbVY0dkN4UlU5S0ZhdlBnYjEtV3IzdjR5bzFzVTZSaEI2OEQxN2pxVHJJY0QxY3BQUFdzUlg3WHlnd2w2aEVMNHBjb2dJN2k0S29nTzJuT1E?oc=5",
+              "publisher": "NDTV",
+              "published": "2026-10-27T18:23:39+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Nepal flood triggered by rock and ice avalanche: Report - Phys.org",
+              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAxZTl4WnVrRFlPRnhYdldPbFdtemdXcWc1UFhkV012SlBVYWlFLXN2aEFOUFJiZ2dzYWVndGhXMy1EalJNYkdxZ3pUcXBxb1J2YTUwMGJvZmhJcTRNRGxZNkVLMFZLcjdaR3FBTy0yaGlOdw?oc=5",
+              "publisher": "Phys.org",
+              "published": "2026-10-14T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Nepal suspends high-altitude trekking over avalanche, snowfall risk - WION",
+              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZW40MHJYQ2daZjJQbzFCRWFCcVcwcnU1YkI5M0xxdWVUS0pvX2R1MDNOMl9ETTJJLW50dXlDV2NmaG5yMWtwSDh5bnR5NWR3WGNpeWdaeGFDS01CUzUtckE4NXFLQmdwdzExeHp2X3ppS0hMaDRpaXpHM1FGaU9HT2dPN1dIcXNPOXJReXdHNnh2VlA0azhFS1d4SzB4aUd1d2xMVXlOVXFQWExzTG5N0gG0AUFVX3lxTE1tZk1CdjJnMWpaZzEycmJUNC1YU3Rqd01pcGtSZjhhbklQT0ZCRTAycTY1VkFzWlZhUnllaWVRV0JiWWlxZ2pLZ2E1U0NiQWxYR0MzTTl0UjhKMF9ad2h2QVVNTXBvTXRDUEVqMTNGeG5UcjdaWnB1SmhPOEFSbm4xWWpucGtGaGFsbnFhQjZxY21BSkJOU1hscmd1Y0RXYmx2TndJRE15b3lPa3pRLUNyQU5pVQ?oc=5",
+              "publisher": "WION",
+              "published": "2026-10-27T17:25:00+00:00",
+              "classification": "warning"
+            },
+            {
+              "title": "Himalayan mountainside moved 40cm before avalanche killed 1,451 in Nepal, scientists reveal - The European Magazine",
+              "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUDNvbnNzZTNQcnNaV0Q0dlFJNTNmZjJkSU5LdndaV1dSRmRNektjT3dVdUJfX1VQbHBDam4wXzE2Z3hjaW9SR01MVWhPVlY0TXFndm00S3pIN19pV0UxbC1RNlFYOVVEbnhpTXZlZC1ESllBT3FFa3cwQzRiNFN1dTJ6NXNUN1dvYzFaeG1wNkNOX3FBRmc3ZFJkaHlZeG56VkRaRTAzOEVKai1qVWY0Q2xRNVJ6c0F0QS1PS2ZrZ3ZmVVdvalhxSmh3?oc=5",
+              "publisher": "The European Magazine",
+              "published": "2026-10-20T07:00:00+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Nepal Orders Three-Day Trekking Pause In Himalayan Regions Due To Avalanche Risks - Travel and Leisure Asia",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMzByMkFhVFVzM2VJblJxNUxIT3lQZjQ0dDlJaVFqbXhrQUF4bHlRR09uZUVsLXNZS1ZyVXE0anNtVlZPTU9KbXY5MG9zQko1SWJvWmU1dFc1TjI2NkVPVV9lSGF0SE1lTFN3LVlHMmxhWi1DU0twNkt6VmgtaXlhVGMzSHlsX0JORUctRXRmMVVTNFR3ZG5aU2sxYWMyYWxBd2txN1VOOE56cTdY0gGyAUFVX3lxTFBrdkFnak9ncjh1eGJkVnlkUWYyQXBUN2JESGs2WlZhQkpKUnFEOG1JOEk2TjNuLTBFX09fNk01dGJDNXRPR0RyeFNaM2tpWnZ0eXcxVnhLVGs1SGNXclVpaW9wSXdIMnhBVTJjVHQzbmI2RnEwRFVvYkhxWk42QnJCcVFYNUdmQTVKQTJhTXZQdTBNUXd6WXhvc0FNM2o5V3JGUkRCMUxXa0E2OXNfYnVQeWc?oc=5",
+              "publisher": "Travel and Leisure Asia",
+              "published": "2026-10-28T07:47:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "What caused Nepal’s Budhi Gandaki river flood? Officials examine landslide dam and ice avalanche theories - IndulgExpress",
+              "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNWU5YenhldC1iakk5XzNZb2FXMXdnRF9hTGk5aENHQkFLZzBzYW80OF9iQU1rOUUxN202Si1pTkNmMzBRRnBxRmVFZ0FGMjN3YWhtUUg4SkJlYkw1VDBSOVBzNXNDMGJvNU04Ml9pU3VjNFgxeHBycDRIdklobV95Q0I4SGFIVWg1WExmUDRqNkt4TmIwZlpKZkp6R1R1S3J6WlFCRGpPLXdtRnFBbmhTYnBFTDRsWGp2YW9HX3RhTjRwMGU4dWhnajY0X2pjZkJ5VC1Ta0lGbDZpRVRoZ2dTR25XRUprdXpZUkHSAfcBQVVfeXFMUGtFcmhhZGFLSE1yYUdDdlQxWVdVSW1RdU5WX2g3YWpQVjR2UUVHX2xSbnhUcWg0c2VpaDVZSThidk0yLTRHRWU3VGpLQ2Qxak9vR09HeW9Md1JoSXMxTFZTLVJpZU5fcEZYUWlQVFFKNkNia01FeHFJbmhWWlVDTkljUHU3ZmU2eFBoZ2s1aEhHMV9Za3FyMkk5YXFaeW5xdDJLMF9Fb0VaR1JmWjFLYUxRRTQ3WUtGQWQxSXZudGw3REdsVzdJeEktUlMzM2NoZzV1S0l1NS1Tb1dxeGdIRnBSWDVTV1N1enNidjc4V2JqOEVUNTNIcw?oc=5",
+              "publisher": "IndulgExpress",
+              "published": "2026-10-12T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Cyclone Arnab: Nepal issues high alert over heavy rain, snowfall and avalanche risks - Mid-Day",
+              "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOWi1DTUNXTEhLLWl2NjlKWi16VUZiOEQ1OWlDbDFIa2s0ZkdWVlh3d2tDZFNQTHR0akhNWFVJNnhtamljdklVbGJvcVBFdjhLTEJZRXRiYTVVQjdsRzVCbmNoWHAwSzZSUVhmZHdOaTZ5OEJPaUZ3OTRDejdqZTdHMXhPU3NLXzhtSnViRERPVUNkQzVzZG83c2tQNDc1bnNIY0tCTFhEcWpoLVRONHN6Y0tJZWM2a0ZCVDNGTlNhTzlsMF9TazVfX3JvalJqVjc0Z0M4cFdhbGdmQQ?oc=5",
+              "publisher": "Mid-Day",
+              "published": "2026-10-27T11:42:00+00:00",
+              "classification": "warning"
+            },
+            {
+              "title": "Massive rock avalanche likely triggered Nepal flash flood, say scientists - The Times of India",
+              "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOVnp3U3pCODNDYnNqZFhZcHp2MkotTnctQ2YtNkNvWGhMRHI3RTYtbDFCdnI3eXB1eDA4aUNIQ21DMTlxM21pYU02OXptNjVtWmZnN3p4b0FZNVZuOXRid2pLM2ZHVFRqcXQzejVCbTZUVlRUbl9vQ3BRTDJBQjhQSmw4aTUxdmcyeFczLU5JZW1CS0ZuQUtxZ1FpcGFmNmJ0OF9ZTHppXzJobmhMRWVzWkpOUnE1TlU0T1dOMjFmWUozTjA1bnR5cnJhS2llNXZXYUF6WV9ZTEVvR0Q5ZXJnc1Z30gHnAUFVX3lxTE85T1gzbmFUZDZlM2VuUk50OE5qOEJNRTVEWkRoRXhMQkRNV3ZORGFzSkRPWkYwS3FEX2I5WEwwLUFuQnV0MmRDTTFNX0FKWkNaUUZqb251a0dNNUh1ODVDcWc0QlRRZHVyTjBwV2dETFo1TG0zOEV4SWdhMXBUajRjT1gxV0p2d2dSVTUwUVQwSzJCT2FDQ0cyNzZ1bEVsUXJHWEV1aUtCYjZrdV9EZUIzcjBNYXQwUlRNOVQxSXZuWkJrWUpxQ1RuY0VueVQzZXJ6SWNFZ0FVN1dVWEktM2RlWEZPRl82TQ?oc=5",
+              "publisher": "The Times of India",
+              "published": "2026-10-13T07:00:00+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Suspected Avalanche in Manaslu Region Under Scrutiny as Severe Flooding Ravages Nepal’s Gorkha District - Hindusthan Samachar English",
+              "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRi1PQlVDYW1mblVTeTFlTmdJdEJub2JYNng4VzZhckc3bmRoZEQxWlpSbnFVTlVqNzFIRXk1R2NGdkh2OTBrU3czTFlqUFFGdXpWZXFmNGdtMm1rRk5oR0Z6ZDVyUVhuVVV4NG1LZ0xhbTRDWWZwcnRobEN1MTVfcmhhdkJmSWdPQ3dOaA?oc=5",
+              "publisher": "Hindusthan Samachar English",
+              "published": "2026-10-11T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Cyclone Arnab raises flood, snowstorm and avalanche risks across Nepal - The Himalayan Times",
+              "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE94TGtWWnpuVXU1RDUxMFlMbU5aUkZ4VUpIc1JBZFNWMkQ2QjZRaVozdTNLajl1YzRpSTh2Y2dhZ3VrWlJyUVQ0YWg2UDN1QnBNM1NTWWlVRFhCd3dv?oc=5",
+              "publisher": "The Himalayan Times",
+              "published": "2026-10-29T04:51:58+00:00",
+              "classification": "unknown"
+            }
+          ],
+          "summary": {
+            "headline": "Live news: 1 report(s) describing an actual avalanche in Nepal event from 1 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+            "counts": {
+              "actual": 1,
+              "warning": 2,
+              "forecast": 2,
+              "historical": 0,
+              "unknown": 7
+            },
+            "independent_publishers_actual": 1,
+            "limitations": [
+              "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+              "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+              "2 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events.",
+              "Only one independent publisher — insufficient independent corroboration."
+            ]
+          }
+        },
+        "context": {
+          "category": "other",
+          "place": "nepal",
+          "name": null,
+          "hazard": "avalanche",
+          "historical": false
+        }
+      }
+    },
+    {
+      "query": "Check again, I heard there was one.",
+      "http_status": 200,
+      "response": {
+        "parsed": {
+          "raw": "Check again, I heard there was one.",
+          "normalized": "check again i heard there was one",
+          "intent": "investigate",
+          "category": "other",
+          "place": "nepal",
+          "window_h": 72.0,
+          "incident_id": null,
+          "norm_key": "occurrence-v2|followup|other|nepal|None|avalanche",
+          "hazard": "avalanche",
+          "name": null,
+          "historical": false
+        },
+        "generated_at": "2026-10-31T15:08:43+00:00",
+        "incidents": [],
+        "sources": [],
+        "items": [],
+        "provenance": {
+          "query_cache": "stale",
+          "geocode": null,
+          "incidents": [],
+          "out_of_scope": "'Nepal' is outside India — PRALAY covers India only."
+        },
+        "answer": "'Nepal' is outside India — PRALAY covers India only. Not mapped on PRALAY's India grid; live news searched instead.",
+        "summary": {
+          "headline": "Live news: 1 report(s) describing an actual avalanche in Nepal event from 1 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+          "status": null,
+          "confidence": null,
+          "reports": 0,
+          "incidents": 0,
+          "freshness": null,
+          "why": null,
+          "limitations": [
+            "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+            "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+            "2 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events.",
+            "Only one independent publisher — insufficient independent corroboration.",
+            "The place could not be resolved, so nothing was investigated."
+          ],
+          "other_incidents": [],
+          "live_counts": {
+            "actual": 1,
+            "warning": 2,
+            "forecast": 2,
+            "historical": 0,
+            "unknown": 7
+          }
+        },
+        "live": {
+          "query": "avalanche nepal when:30d",
+          "connector": "Google News RSS",
+          "invoked": true,
+          "ok": true,
+          "error": null,
+          "retrieved_at": "2026-10-31T15:08:44+00:00",
+          "from_cache": false,
+          "items": [
+            {
+              "title": "Nepal avalanche kills at least 15 expedition workers - Al Jazeera",
+              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZ3MyUUxMLVN4N01fY2NrQk5hRXp4bDRWcGQ2UU5jclppQ0VWTFJYT3lRcHFxYmhYSy1QcHdRS2tIVkZEdG9rS0lfTjd3eldTSTdiRTgzQUlPcVdOZW4ycWFOUWNMd2xTZkk2bUJ3VWdoandSdWwxekE0eG53NzRxUkFGbWVudUlrRDVPRzJBMnZoSGVodFl3NtIBngFBVV95cUxPQUhWZ1JWWF9XWGcyZURsTDYxR09Kc1BiaDJsQy04Ql9pNTQxM0l5ZzJxMXlPYXRlSTVCaUlRYTNqYXB1aEtuOHRQVDNnUjJQVzFsdV9lMXBnc2xweUZBb3ZwLWpSbkRQdGk3am4zRGV5SkZBNkxYbTZveHJkRVF1SzNJY1pxcHEyWi03UjVoVE5FamphMXBGX3kxU0w3UQ?oc=5",
+              "publisher": "Al Jazeera",
+              "published": "2026-10-02T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "'Massive rock avalanche likely caused Nepal flood' - The Times of India",
+              "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSnJaY0U4LWpDeFI2alhya1llLXNqa3JNLTJBTE5jWXl4c3dmT0NHNzhHSDFZeFhIWnREYWtYSFU5V0Q5YVdYeFVXbU0wRlpZZ2FNMExPVy11SWRHblJUcVh0MExsczlxMTIzQVJJQUt0MkQxdFBEeE9nV0VGT1RWVWVzeGdiczBRLU5RVjBxeXRHNFozMDBVMHJITG42a3JLWGxVTWZJS1FkdGVydDlNMEFPTGtKc0ZreUp5Q3dEaGhVM21VYkHSAcsBQVVfeXFMT2ZDa0dxcWh5SklvQmRYMUVueUFWT2tKSzk0NlVnQlJJbXFGX3FoVll3ZmIycUFWaEJzcDJ4YmN3ZUVxSUwwb0xjWTAtNE42R1VGTHRyX1c2S3ZHWXpzclhMNlZmUFBjVThvWHpMdHZNVDZqQ0E4YzlOak1FM0ZOZVk0eEFaSkNIaGdmcjBtZkQ4X3BkSUh1LTFZcmViTDB6cmV3WEJXdkRubEpmaTdSdXVqc01kMVdTTTZvUmxvRUJIUGgwVHJfWGI2cE0?oc=5",
+              "publisher": "The Times of India",
+              "published": "2026-10-13T07:00:00+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Nepal Halts Himalayan Trekking Permits Amid Avalanche Risks - NDTV",
+              "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQb2MzS3luS3RDNnlPZDl5Sk90RmJyX2R6QXUza1lhUms2Y2hUUXUtU1hkQmNlNjdHRGIxOWltaV82cE5QcE00M3FHeWktMEVQRjRfVjN0WkhXZ2txN3pXMDhPaVRQRWluUUVBWDlYVEoyQVRYbEFsclYyX25ZamUycXIzLXdZNFJpckEwaDhERkdQQnRjX2VjUXdZTVVFYmJGV3fSAaoBQVVfeXFMTVlTdi1kbmUzeUk5RGpJSUJWRW53aTJ4Yl9rZmpnbWZNS2JWQ2JUTzFyeHFNYzNuaFFCaUpEVjd6aXBOQWxCeFVCcjZFVGV0aWhzc0g5d3c4MHZfbVY0dkN4UlU5S0ZhdlBnYjEtV3IzdjR5bzFzVTZSaEI2OEQxN2pxVHJJY0QxY3BQUFdzUlg3WHlnd2w2aEVMNHBjb2dJN2k0S29nTzJuT1E?oc=5",
+              "publisher": "NDTV",
+              "published": "2026-10-27T18:23:39+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Nepal flood triggered by rock and ice avalanche: Report - Phys.org",
+              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAxZTl4WnVrRFlPRnhYdldPbFdtemdXcWc1UFhkV012SlBVYWlFLXN2aEFOUFJiZ2dzYWVndGhXMy1EalJNYkdxZ3pUcXBxb1J2YTUwMGJvZmhJcTRNRGxZNkVLMFZLcjdaR3FBTy0yaGlOdw?oc=5",
+              "publisher": "Phys.org",
+              "published": "2026-10-14T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Nepal suspends high-altitude trekking over avalanche, snowfall risk - WION",
+              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZW40MHJYQ2daZjJQbzFCRWFCcVcwcnU1YkI5M0xxdWVUS0pvX2R1MDNOMl9ETTJJLW50dXlDV2NmaG5yMWtwSDh5bnR5NWR3WGNpeWdaeGFDS01CUzUtckE4NXFLQmdwdzExeHp2X3ppS0hMaDRpaXpHM1FGaU9HT2dPN1dIcXNPOXJReXdHNnh2VlA0azhFS1d4SzB4aUd1d2xMVXlOVXFQWExzTG5N0gG0AUFVX3lxTE1tZk1CdjJnMWpaZzEycmJUNC1YU3Rqd01pcGtSZjhhbklQT0ZCRTAycTY1VkFzWlZhUnllaWVRV0JiWWlxZ2pLZ2E1U0NiQWxYR0MzTTl0UjhKMF9ad2h2QVVNTXBvTXRDUEVqMTNGeG5UcjdaWnB1SmhPOEFSbm4xWWpucGtGaGFsbnFhQjZxY21BSkJOU1hscmd1Y0RXYmx2TndJRE15b3lPa3pRLUNyQU5pVQ?oc=5",
+              "publisher": "WION",
+              "published": "2026-10-27T17:25:00+00:00",
+              "classification": "warning"
+            },
+            {
+              "title": "Himalayan mountainside moved 40cm before avalanche killed 1,451 in Nepal, scientists reveal - The European Magazine",
+              "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUDNvbnNzZTNQcnNaV0Q0dlFJNTNmZjJkSU5LdndaV1dSRmRNektjT3dVdUJfX1VQbHBDam4wXzE2Z3hjaW9SR01MVWhPVlY0TXFndm00S3pIN19pV0UxbC1RNlFYOVVEbnhpTXZlZC1ESllBT3FFa3cwQzRiNFN1dTJ6NXNUN1dvYzFaeG1wNkNOX3FBRmc3ZFJkaHlZeG56VkRaRTAzOEVKai1qVWY0Q2xRNVJ6c0F0QS1PS2ZrZ3ZmVVdvalhxSmh3?oc=5",
+              "publisher": "The European Magazine",
+              "published": "2026-10-20T07:00:00+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Nepal Orders Three-Day Trekking Pause In Himalayan Regions Due To Avalanche Risks - Travel and Leisure Asia",
+              "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMzByMkFhVFVzM2VJblJxNUxIT3lQZjQ0dDlJaVFqbXhrQUF4bHlRR09uZUVsLXNZS1ZyVXE0anNtVlZPTU9KbXY5MG9zQko1SWJvWmU1dFc1TjI2NkVPVV9lSGF0SE1lTFN3LVlHMmxhWi1DU0twNkt6VmgtaXlhVGMzSHlsX0JORUctRXRmMVVTNFR3ZG5aU2sxYWMyYWxBd2txN1VOOE56cTdY0gGyAUFVX3lxTFBrdkFnak9ncjh1eGJkVnlkUWYyQXBUN2JESGs2WlZhQkpKUnFEOG1JOEk2TjNuLTBFX09fNk01dGJDNXRPR0RyeFNaM2tpWnZ0eXcxVnhLVGs1SGNXclVpaW9wSXdIMnhBVTJjVHQzbmI2RnEwRFVvYkhxWk42QnJCcVFYNUdmQTVKQTJhTXZQdTBNUXd6WXhvc0FNM2o5V3JGUkRCMUxXa0E2OXNfYnVQeWc?oc=5",
+              "publisher": "Travel and Leisure Asia",
+              "published": "2026-10-28T07:47:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "What caused Nepal’s Budhi Gandaki river flood? Officials examine landslide dam and ice avalanche theories - IndulgExpress",
+              "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNWU5YenhldC1iakk5XzNZb2FXMXdnRF9hTGk5aENHQkFLZzBzYW80OF9iQU1rOUUxN202Si1pTkNmMzBRRnBxRmVFZ0FGMjN3YWhtUUg4SkJlYkw1VDBSOVBzNXNDMGJvNU04Ml9pU3VjNFgxeHBycDRIdklobV95Q0I4SGFIVWg1WExmUDRqNkt4TmIwZlpKZkp6R1R1S3J6WlFCRGpPLXdtRnFBbmhTYnBFTDRsWGp2YW9HX3RhTjRwMGU4dWhnajY0X2pjZkJ5VC1Ta0lGbDZpRVRoZ2dTR25XRUprdXpZUkHSAfcBQVVfeXFMUGtFcmhhZGFLSE1yYUdDdlQxWVdVSW1RdU5WX2g3YWpQVjR2UUVHX2xSbnhUcWg0c2VpaDVZSThidk0yLTRHRWU3VGpLQ2Qxak9vR09HeW9Md1JoSXMxTFZTLVJpZU5fcEZYUWlQVFFKNkNia01FeHFJbmhWWlVDTkljUHU3ZmU2eFBoZ2s1aEhHMV9Za3FyMkk5YXFaeW5xdDJLMF9Fb0VaR1JmWjFLYUxRRTQ3WUtGQWQxSXZudGw3REdsVzdJeEktUlMzM2NoZzV1S0l1NS1Tb1dxeGdIRnBSWDVTV1N1enNidjc4V2JqOEVUNTNIcw?oc=5",
+              "publisher": "IndulgExpress",
+              "published": "2026-10-12T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Cyclone Arnab: Nepal issues high alert over heavy rain, snowfall and avalanche risks - Mid-Day",
+              "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOWi1DTUNXTEhLLWl2NjlKWi16VUZiOEQ1OWlDbDFIa2s0ZkdWVlh3d2tDZFNQTHR0akhNWFVJNnhtamljdklVbGJvcVBFdjhLTEJZRXRiYTVVQjdsRzVCbmNoWHAwSzZSUVhmZHdOaTZ5OEJPaUZ3OTRDejdqZTdHMXhPU3NLXzhtSnViRERPVUNkQzVzZG83c2tQNDc1bnNIY0tCTFhEcWpoLVRONHN6Y0tJZWM2a0ZCVDNGTlNhTzlsMF9TazVfX3JvalJqVjc0Z0M4cFdhbGdmQQ?oc=5",
+              "publisher": "Mid-Day",
+              "published": "2026-10-27T11:42:00+00:00",
+              "classification": "warning"
+            },
+            {
+              "title": "Massive rock avalanche likely triggered Nepal flash flood, say scientists - The Times of India",
+              "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOVnp3U3pCODNDYnNqZFhZcHp2MkotTnctQ2YtNkNvWGhMRHI3RTYtbDFCdnI3eXB1eDA4aUNIQ21DMTlxM21pYU02OXptNjVtWmZnN3p4b0FZNVZuOXRid2pLM2ZHVFRqcXQzejVCbTZUVlRUbl9vQ3BRTDJBQjhQSmw4aTUxdmcyeFczLU5JZW1CS0ZuQUtxZ1FpcGFmNmJ0OF9ZTHppXzJobmhMRWVzWkpOUnE1TlU0T1dOMjFmWUozTjA1bnR5cnJhS2llNXZXYUF6WV9ZTEVvR0Q5ZXJnc1Z30gHnAUFVX3lxTE85T1gzbmFUZDZlM2VuUk50OE5qOEJNRTVEWkRoRXhMQkRNV3ZORGFzSkRPWkYwS3FEX2I5WEwwLUFuQnV0MmRDTTFNX0FKWkNaUUZqb251a0dNNUh1ODVDcWc0QlRRZHVyTjBwV2dETFo1TG0zOEV4SWdhMXBUajRjT1gxV0p2d2dSVTUwUVQwSzJCT2FDQ0cyNzZ1bEVsUXJHWEV1aUtCYjZrdV9EZUIzcjBNYXQwUlRNOVQxSXZuWkJrWUpxQ1RuY0VueVQzZXJ6SWNFZ0FVN1dVWEktM2RlWEZPRl82TQ?oc=5",
+              "publisher": "The Times of India",
+              "published": "2026-10-13T07:00:00+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Suspected Avalanche in Manaslu Region Under Scrutiny as Severe Flooding Ravages Nepal’s Gorkha District - Hindusthan Samachar English",
+              "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRi1PQlVDYW1mblVTeTFlTmdJdEJub2JYNng4VzZhckc3bmRoZEQxWlpSbnFVTlVqNzFIRXk1R2NGdkh2OTBrU3czTFlqUFFGdXpWZXFmNGdtMm1rRk5oR0Z6ZDVyUVhuVVV4NG1LZ0xhbTRDWWZwcnRobEN1MTVfcmhhdkJmSWdPQ3dOaA?oc=5",
+              "publisher": "Hindusthan Samachar English",
+              "published": "2026-10-11T07:00:00+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Cyclone Arnab raises flood, snowstorm and avalanche risks across Nepal - The Himalayan Times",
+              "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE94TGtWWnpuVXU1RDUxMFlMbU5aUkZ4VUpIc1JBZFNWMkQ2QjZRaVozdTNLajl1YzRpSTh2Y2dhZ3VrWlJyUVQ0YWg2UDN1QnBNM1NTWWlVRFhCd3dv?oc=5",
+              "publisher": "The Himalayan Times",
+              "published": "2026-10-29T04:51:58+00:00",
+              "classification": "unknown"
+            }
+          ],
+          "summary": {
+            "headline": "Live news: 1 report(s) describing an actual avalanche in Nepal event from 1 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+            "counts": {
+              "actual": 1,
+              "warning": 2,
+              "forecast": 2,
+              "historical": 0,
+              "unknown": 7
+            },
+            "independent_publishers_actual": 1,
+            "limitations": [
+              "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+              "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+              "2 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events.",
+              "Only one independent publisher — insufficient independent corroboration."
+            ]
+          }
+        },
+        "context": {
+          "category": "other",
+          "place": "nepal",
+          "name": null,
+          "hazard": "avalanche",
+          "historical": false
+        }
+      }
+    },
+    {
+      "query": "Cyclone Arnab",
+      "http_status": 200,
+      "response": {
+        "parsed": {
+          "raw": "Cyclone Arnab",
+          "normalized": "cyclone arnab",
+          "intent": "investigate",
+          "category": "cyclone_storm",
+          "place": null,
+          "window_h": 72.0,
+          "incident_id": null,
+          "norm_key": "occurrence-v2|investigate|cyclone_storm|-|72|-|arnab|cyclone|0",
+          "hazard": "cyclone",
+          "name": "arnab",
+          "historical": false
+        },
+        "generated_at": "2026-10-31T15:08:44+00:00",
+        "incidents": [],
+        "sources": [],
+        "items": [],
+        "provenance": {
+          "query_cache": "not applicable",
+          "incidents": []
+        },
+        "answer": "Searched live news (no specific place given).",
+        "summary": {
+          "headline": "Live news: 5 report(s) describing an actual Cyclone Arnab event from 4 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+          "status": null,
+          "confidence": null,
+          "reports": 0,
+          "incidents": 0,
+          "freshness": null,
+          "why": null,
+          "limitations": [
+            "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+            "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+            "0 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events.",
+            "The place could not be resolved, so nothing was investigated."
+          ],
+          "other_incidents": [],
+          "live_counts": {
+            "actual": 5,
+            "warning": 0,
+            "forecast": 2,
+            "historical": 0,
+            "unknown": 5
+          }
+        },
+        "live": {
+          "query": "cyclone arnab when:30d",
+          "connector": "Google News RSS",
+          "invoked": true,
+          "ok": true,
+          "error": null,
+          "retrieved_at": "2026-10-31T15:08:45+00:00",
+          "from_cache": false,
+          "items": [
+            {
+              "title": "Cyclone Arnab: Andhra Pradesh, Yanam (Puducherry) and Odisha (Date: 29 October 2026, Time: 08:00 IST) - ReliefWeb",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQRGNmQ1gyMUVaMG5sRmpkY2FNa3N1eldWLXQxdVZ0Y3lvaF80MGlHbXdzQjFtSmkzZ3VhMEtCT2M1X1ZDTWRCd2ItVjlaUFRqY1RjUDF1U21QMGQ1S2RjTDI5S29DSm5YQVduc0JORWN2bDRFWlFBVFZrM3c3aXhhWkpsYzdFbW85Y2QycjNUTHpxamk0ZDZEaGVEelRua1R4NG9rZFphWFlKRVRGUktIUzliNGgtdktkaDRYb0VxMVVuUGZ4?oc=5",
+              "publisher": "ReliefWeb",
+              "published": "2026-10-29T10:59:40+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Photos: Aftermath of deadly Cyclone Arnab in southern India - Al Jazeera",
+              "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNWpzNDBXZDBHZWRUZi12TldWNnR2bC02TGRSSXFQOXBDbzJuNTBsZ01PVEdhTGxfeEI0V1BQeDhfS1p2REU0V2UyTENlcGkzRjYwWkM1aFJCbS01WWlTTHN4YXBwN21rWGlHWlFTMWpXZXdoeTdQZmRkVWltSC1WbWpZcHlrTGVNVE9VNnhPanFYZmpsUWVvOWFvT0lBcTNKRmpJTjdB0gGrAUFVX3lxTFB4czd1eG4zblJ6ZHQ5S0RxV01QN2pPb0QzTmFjWHBuLUpzbHNFN3dNV0laaHg4bzZITllNQTMwSFdZTkplLVd6cExPaEJuZXJJbnAzYUJwT2ZKWUR5ZndnRVByam9JRTFPWlNHWmpFN2ZjcWtsLXRHeTlIVlpCZzg4RXh4TzBNY2Y1S3N6ZzdDTVpyN3F5OU96VmttUHl2Sk9SVDNkejQ3bHN0NA?oc=5",
+              "publisher": "Al Jazeera",
+              "published": "2026-10-29T09:14:54+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Cyclone Arnab weakens, Andhra govt announces financial assistance to affected families and businesses - News On AIR",
+              "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSHNoX19UVFdsRE5Lb0M0bDFpZWJHd0hycmJ4WC1nNW1WUVc5aGxVUEFXZkhuN3BfWUtsakdtR0NSYnRRWjZrOVpSTEtkbzVPa1FtYWdCaUVZTUE5b19IOGdNV3UzRDN3U0FWYWdjMW43NldzZ2k0TzlOdzg4cTI2V0VkckQ3TTIwUmo3eS1wVmlmaVFQdkhoZ2Nndkg3VlFrXy1udGh1enU4RFhINlljOUdJR3lqSXRGcm82MUJYM1J4Yzc5ay00aF85bWxpendwZVBsdVUzXy01UU5xMGN3X2pYbmxQV1NSSmQwbndfRmJtcS11TC1GYw?oc=5",
+              "publisher": "News On AIR",
+              "published": "2026-10-28T22:09:33+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Hunker down: On Cyclone Arnab, its landfall - The Hindu",
+              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVjliT2JCdVNmYmg1SXNLUXhoMFItWTdlRVU3X205S1dlemdvOU5IeHVZRndIYzh2c3dzbDFnT0NLVVBZek5IU0pBNWpFVk9Vb2dMUTBGUGhRakNNN1E5OGZiZVVzMVlCNDZ4d2NSNURRQXZDelc5YVNqcmlmRWszQWVuSHBlRDMxOUJCYXdOWl9uOS1LUHBOUVozUGh5WEZpQWJreXFEc9IBrgFBVV95cUxPVWVNclNZeGE2cWNPSGtFMkllVnRUdUVZUFVJZ3llM1FtZG1SczNwLXprbG9vXzRQT3N3S29xZHo3WHhoQWF1d3dVbmJzdWRNZkFYbUtJZTV0SkJhZl82NUFPU09YaEZ0NDFuLU4xOWctSEpHcjQ3U3g5VzUzZ2R2cmhVS2JXWUcwQkhhblNUcXM1MjdYRENPZFYxWTFQN1J2WHJqVE5VLUNwblZ3Y1E?oc=5",
+              "publisher": "The Hindu",
+              "published": "2026-10-28T18:50:00+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Cyclone Arnab: Coastal West Bengal districts likely to receive heavy rain - Down To Earth",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVm1JVDRlWkt0dVJPWFQ5YnZMVi1BN3FFNTZHZWVtUW1NYzl3UHdfWUo1NFB2czdEX3VydjBDRGpiX1oxY0ViZlNVYndpU0ZvYmFEdVhQbVIyMV9rMmNZaG9HQTNIQ3c3bUx2V0JqZEJ0NktuT1ZHMmVoODdCRC1hQXdoU3o5ck5PWnZjOE51dTV1YUtCVjJBdDhpVm1nd3hsWUU4MjYtZGlHYkFDdlBCb0VVTmlmVWhZVU9lZ2p30gHLAUFVX3lxTE9jQ2MyTXhTVFF4OTJxcW1rOWlocFJxVXpzcUxjR1hQdUNHeFc4LXZFQkhlUjIwVTdka3phd1VmMlBfcWc1cGpyT2dnQ2lYOXNmRU5SQ0h0UkR2dmpoRlZYNUs0LXFWbEhNQXFBeS1BWldKNThfdGE4c2hFN3hET3ZscDVsUkkxYlhDMkxpdlY2V0t1UzhJYXJYNXBGTE5FRnY2X0xYTGMwUHp5VUxyM0haT2FnQWM3X3dBcUQxRlFZZGhzQXVxX3NUQlo4?oc=5",
+              "publisher": "Down To Earth",
+              "published": "2026-10-28T11:45:24+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Three killed, thousands evacuated as Cyclone Arnab hits eastern India - Reuters",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZlJDOVctdlFxT0xCaFRzd1dPMWJORzREWDItVWtGcHZyVGREWlRBeEd3VFV2Q1VzUjFSdkxqazFwekIxU181ZDdwVXBDTV9jU3Q2a0FHa0hVblVaSFpoaVhNMTdlYThKMUNHNnl5M3J2ZFp3MGlpRENFaklRTjJrajRiLWVoOXEwMUY4NFY2QTBFc2hTNW51QjJHSVNXbVNnTlJIbU9WOXNRZ1lOMDhJRWR6RzdiQjN5bU8wZFpn?oc=5",
+              "publisher": "Reuters",
+              "published": "2026-10-28T09:34:57+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Situation Report: Severe Cyclonic Storm Arnab (29 October 2026) - ReliefWeb",
+              "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSVJjMHFwVWM0czd0X0dGUk5EOFZLaF9qN05VUkotcFRCdHFwWGRhai1Xa1lhZkI3REhpWTF2UTRYcGFuX2NiVm43cmpmWEFrVFp1TXZ2TjJycEtydURZYVRDZTY3NHN6NDZybHVfdUNOdEJUUEpCRTg2MGJ3aWJDcGdubnZ2LW5mMjl2THFBLU1ncWJqU3pDRDhkcw?oc=5",
+              "publisher": "ReliefWeb",
+              "published": "2026-10-29T12:51:37+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "At least 3 dead after Cyclone Arnab hits southern India - Al Jazeera",
+              "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdGtkR2NQb1VrRW1neFNuUk92WGZZeGgtcXRodUZ5eG5BZ21SajNVTEE3bTFLZUtibGxZZ2xyemxXZkk0SlAxaHJNdEw1QUpNT2tYUVE3RUhrR1NKNm5rWi1kYklaM1lMZVVmdG9idG0tcWh0YlJaVVAyUjhyb2VGWWVMSlU1YTZXeHNscGkxTzF4OXBQUjRYc2YyONIBoAFBVV95cUxQNWJDY0FXb0JSYU5tajlIM0dDWmU2dWlJMzNPLXNTeEU1MzFoQjhRd1M1a2JhTUxpcmctTkdGVkxiRUFHcEdXYnFzb1dBSHdxVV9LWktfdnh4Y0RONkwwU3pQWHZVQXdlM2U0bXdyeExLUVhmd2gxVDVlWFBHZ2d4Z0xXTmFOMl9kZlk3X21jc3VKYnl2VWxUVmlNZmhwQU5E?oc=5",
+              "publisher": "Al Jazeera",
+              "published": "2026-10-28T11:16:17+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Double trouble in Bay of Bengal after cyclone Arnab? Another storm could head towards Odisha - Down To Earth",
+              "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeFpnaTh2LWpoTzlSM3hoUHZUb2FybHZzYTdjTXBHNHBMbVdnQ1JRSmdQNUdzZTVaYzI0NEFjVWlXaWYyQzdxU3JKYzdNYU1zWVNiTUU4d2hsSEFYOU0tLVVJVThLU1U0SkctZl9KczFzVUV0cDFMX0ZSYWdYWDk0TFQ0NzA4RjY5X3JnSkNFbDdFY0FBNWZDQmhkYjN3cjNxOEhYRzJHQktRcXZ5am1VcFdXOFBrNkwzSl9YcVJ4X3RHaHppNm9LRVJTWmsxT094R01v0gHgAUFVX3lxTE4wa0szSjF2a0pqN3ZfaTlIWkNIQ0VYTmZpTHU2SF83TDVNaXpCNHBDckNFXy1jYl9iMVZUMXcxY1RTTzBDdXJQWmRYd09Gb0ZIaDZOd0VxdzhiLTh0YnUxQk05RW0wUGlXNVpoeWliaEhrZ2R1OTFia0ljR2ticXA4NHUyZzhkRm4zbnJVT04xNEFqRUdPRjFkU3BISC1DS0FjN2RLNGlrLTg5VV9UMGtOa0dZZklDM3VOYzI3Q0JycTFIVTFQVXFsTnZUYkhLcFVZUkR0dTZDSUc5bDliamlI?oc=5",
+              "publisher": "Down To Earth",
+              "published": "2026-10-27T12:31:40+00:00",
+              "classification": "forecast"
+            },
+            {
+              "title": "Cyclone Arnab weakens after landfall along Andhra Pradesh-Yanam coast - News On AIR",
+              "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRVFyTXNZV0J3U1Q2dl9ZeTBDWDVaT280Y2phMGMzVUpVMTdXU1dabFBCS0NXV2huaUtMQ1hubl9hMkk4am44S1RWZzd3dTRXVEdYNFNMcUZZVFNVeURTQWx4dWM1eFpHemFPRHhwZnRNZGF5S1BPRU5kM0hsUjBHblhwV2hrOE1yZ1R2a2RsdHYwcUlkM0ZyZTMzWQ?oc=5",
+              "publisher": "News On AIR",
+              "published": "2026-10-28T06:32:00+00:00",
+              "classification": "actual"
+            },
+            {
+              "title": "Cyclone Arnab: Andhra Pradesh, Yanam (Puducherry) and Odisha (Date: 30 October 2026, Time: 08:00 IST) - ReliefWeb",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeHRCaFZ1SC0ycTNrWjk1YmU1dnJYQmRBNFNVVzVoODJFYjhra3prUHd1aFpOQ1ZBNVhOZmgxMGZjYjBJcU1DMHBYVU84aWNDOWlLYkxtVV9SWHNPdjExY0NqZTA5WHZJa3NRSkFDYVU0WjhRQTd2Y1ExaUt0NERTd3VfaHpydG9uOXh4NVNpeFU1MGVKVEIzSTBtc2FNdTJkR3FMNkU5Y0d2djdCRXJhLU9IZk5xdVRJUFFwQjBsUGh4OHE3?oc=5",
+              "publisher": "ReliefWeb",
+              "published": "2026-10-30T12:46:55+00:00",
+              "classification": "unknown"
+            },
+            {
+              "title": "Daily weather tracker: Cyclone Arnab brings heavy rain to Andhra Pradesh, Odisha and Chhattisgarh - Down To Earth",
+              "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPelVySm82cVVfODJKLXhkLUFveGZFYjR2YzB4eFYyalloQUdBSFlpV3FEMUpqbzdDQUlWbjRNSjVxeW9sV282dnNpd3R0cmplcjB5SE45cHlUeUFnRHE3SWVNSE90cnZLNS1pN0FQZ3lTWkxsMkdrTk9wNHJkQWl4N0tNWi1GMG9oWEhVYjBMN1Z2aXdzeXN5RVVHYzRjM0NFYmV3eXBIb1FGTlowYnNaSGhadzY1blkxQmZ0bWZtWW1uTlJRd0RBN254dWptMm1mem83cExJWnPSAeYBQVVfeXFMTjRXUGZZMUMtT2VnSG5DTXRwQjR6NF8yZ0Rob2c3anRPNFg3U3BJS2V0cGY1Ym8wUUJqVzB2ZmJXM2pPNDhyTDU4VlFfZHplZVFxUm4wc0pBYmpjS3F6LVVFdmh2TDZSaHNGTEo1TGtSTm5XeGhybElZSkxRSkJYWlZ2dlhvOTE1eVFkaDJ0UDE1X1FpMDZjalJxUVhRTzlQUG5MV2xFNmNsVmZnaFhIWmk2b0tGNEoxQ2NVQzZIT2VydXQ4MUZsM3FTVnZ0V095emM1RFZ0NjNWeDVIRHRqczM2NVJ0dGc?oc=5",
+              "publisher": "Down To Earth",
+              "published": "2026-10-28T07:34:30+00:00",
+              "classification": "unknown"
+            }
+          ],
+          "summary": {
+            "headline": "Live news: 5 report(s) describing an actual Cyclone Arnab event from 4 independent publisher(s) — external evidence, not yet verified by PRALAY.",
+            "counts": {
+              "actual": 5,
+              "warning": 0,
+              "forecast": 2,
+              "historical": 0,
+              "unknown": 5
+            },
+            "independent_publishers_actual": 4,
+            "limitations": [
+              "External evidence is not verified by PRALAY until it is ingested and corroborated.",
+              "No matching incident in PRALAY's database — this does NOT mean nothing happened.",
+              "0 warning(s) and 2 forecast(s) are listed separately and are not treated as confirmed events."
+            ]
+          }
+        },
+        "context": {
+          "category": "cyclone_storm",
+          "place": null,
+          "name": "arnab",
+          "hazard": "cyclone",
+          "historical": false
+        }
+      }
+    },
+    {
+      "query": "Was that an actual incident or just a warning?",
+      "http_status": 200,
+      "response": {
+        "parsed": {
+          "raw": "Was that an actual incident or just a warning?",
+          "normalized": "was that an actual incident or just a warning",
+          "intent": "list",
+          "category": null,
+          "place": null,
+          "window_h": 72.0,
+          "incident_id": null,
+          "norm_key": "occurrence-v2|list|-|-|72|-|-|-|0",
+          "hazard": null,
+          "name": null,
+          "historical": false
+        },
+        "generated_at": "2026-10-31T15:08:45+00:00",
+        "incidents": [
+          {
+            "id": 1,
+            "title": "Flooding — Mohali, Punjab",
+            "category": "flood",
+            "status": "CORROBORATED",
+            "review_required": true,
+            "confidence": 60.0,
+            "reports": 5,
+            "last_activity": "2026-10-31T15:02:31+00:00",
+            "grid_cell": "DEMO1-R098C034",
+            "reason": "Corroboration rule(s) met: R1_crowd_consensus",
+            "freshness": {
+              "state": "fresh",
+              "ttl_min": 20,
+              "last_checked": "2026-10-31T15:02:31+00:00",
+              "age_min": 6.2
+            },
+            "is_demo": true,
+            "missing": [
+              "No independent news or official source has confirmed this incident yet.",
+              "No supporting heavy-rainfall signal in modelled weather data (does not disprove the event)."
+            ],
+            "evidence_profile": {
+              "reports_total": 5,
+              "reports_processed": 5,
+              "independent_reports": 3,
+              "reports_with_consistent_location": 3,
+              "reports_time_consistent": 3,
+              "duplicate_reports": 1,
+              "contradicted_reports": 1,
+              "contradicted_with_strong_findings": 1,
+              "supporting_items": 0,
+              "independent_external_groups": [],
+              "official_support": false,
+              "weather_support": false,
+              "contradicting_sources": 0,
+              "sources_unavailable": [
+                "GDELT DOC 2.0"
+              ],
+              "rules_met": [
+                "3+ independent reports with consistent (medium/high-confidence) locations"
+              ]
+            },
+            "confidence_assessment": {
+              "level": "MEDIUM",
+              "percentage": null,
+              "percentage_note": "No percentage shown: PRALAY's numeric scores are uncalibrated heuristics, not probabilities.",
+              "reasons": [
+                "corroborated by one kind of evidence only (independent crowd reports; no independent news/official confirmation)",
+                "1 associated report(s) contradicted (e.g. recycled/old media) — outweighed by 3 independent report(s), not lowered",
+                "1 duplicate report(s) not counted as independent",
+                "unavailable sources: GDELT DOC 2.0"
+              ]
+            }
+          },
+          {
+            "id": 2,
+            "title": "Fire — Sector 17, Chandigarh",
+            "category": "fire",
+            "status": "CONTRADICTED",
+            "review_required": true,
+            "confidence": 15.0,
+            "reports": 1,
+            "last_activity": "2026-10-31T15:02:29+00:00",
+            "grid_cell": "DEMO1-R098C035",
+            "reason": "All associated reports are contradicted and no independent source supports the incident.",
+            "freshness": {
+              "state": "fresh",
+              "ttl_min": 20,
+              "last_checked": "2026-10-31T15:02:29+00:00",
+              "age_min": 6.3
+            },
+            "is_demo": true,
+            "missing": [
+              "No independent news or official source has confirmed this incident yet.",
+              "Fewer than two reports with medium/high location confidence."
+            ],
+            "evidence_profile": {
+              "reports_total": 1,
+              "reports_processed": 1,
+              "independent_reports": 0,
+              "reports_with_consistent_location": 0,
+              "reports_time_consistent": 0,
+              "duplicate_reports": 0,
+              "contradicted_reports": 1,
+              "contradicted_with_strong_findings": 1,
+              "supporting_items": 0,
+              "independent_external_groups": [],
+              "official_support": false,
+              "weather_support": false,
+              "contradicting_sources": 0,
+              "sources_unavailable": [
+                "GDELT DOC 2.0"
+              ],
+              "rules_met": []
+            },
+            "confidence_assessment": {
+              "level": "MEDIUM",
+              "percentage": null,
+              "percentage_note": "No percentage shown: PRALAY's numeric scores are uncalibrated heuristics, not probabilities.",
+              "reasons": [
+                "one report with a strong contradicting finding (e.g. recycled/old media or a GPS mismatch)",
+                "unavailable sources: GDELT DOC 2.0"
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "title": "Landslide — Shimla, Himachal Pradesh",
+            "category": "landslide",
+            "status": "UNVERIFIED",
+            "review_required": true,
+            "confidence": 35.0,
+            "reports": 1,
+            "last_activity": "2026-10-31T14:58:26+00:00",
+            "grid_cell": "DEMO1-R100C036",
+            "reason": "Not enough independent evidence yet: 1 independent report(s) (0 with medium/high location), 0 independent external supporting source group(s), weather support: False.",
+            "freshness": {
+              "state": "fresh",
+              "ttl_min": 20,
+              "last_checked": "2026-10-31T14:58:26+00:00",
+              "age_min": 10.3
+            },
+            "is_demo": true,
+            "missing": [
+              "No independent news or official source has confirmed this incident yet.",
+              "No supporting heavy-rainfall signal in modelled weather data (does not disprove the event).",
+              "Fewer than two reports with medium/high location confidence."
+            ],
+            "evidence_profile": {
+              "reports_total": 1,
+              "reports_processed": 1,
+              "independent_reports": 1,
+              "reports_with_consistent_location": 0,
+              "reports_time_consistent": 0,
+              "duplicate_reports": 0,
+              "contradicted_reports": 0,
+              "contradicted_with_strong_findings": 0,
+              "supporting_items": 0,
+              "independent_external_groups": [],
+              "official_support": false,
+              "weather_support": false,
+              "contradicting_sources": 0,
+              "sources_unavailable": [
+                "GDELT DOC 2.0"
+              ],
+              "rules_met": []
+            },
+            "confidence_assessment": {
+              "level": "LOW",
+              "percentage": null,
+              "percentage_note": "No percentage shown: PRALAY's numeric scores are uncalibrated heuristics, not probabilities.",
+              "reasons": [
+                "not enough independent evidence to confirm or rule out the event — UNVERIFIED does not mean false",
+                "unavailable sources: GDELT DOC 2.0"
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "title": "Flooding — Panchkula, Haryana",
+            "category": "flood",
+            "status": "CONTRADICTED",
+            "review_required": true,
+            "confidence": 15.0,
+            "reports": 1,
+            "last_activity": "2026-10-31T14:56:22+00:00",
+            "grid_cell": "DEMO1-R098C035",
+            "reason": "All associated reports are contradicted and no independent source supports the incident.",
+            "freshness": {
+              "state": "fresh",
+              "ttl_min": 20,
+              "last_checked": "2026-10-31T14:56:22+00:00",
+              "age_min": 12.4
+            },
+            "is_demo": true,
+            "missing": [
+              "No independent news or official source has confirmed this incident yet.",
+              "No supporting heavy-rainfall signal in modelled weather data (does not disprove the event).",
+              "Fewer than two reports with medium/high location confidence."
+            ],
+            "evidence_profile": {
+              "reports_total": 1,
+              "reports_processed": 1,
+              "independent_reports": 0,
+              "reports_with_consistent_location": 0,
+              "reports_time_consistent": 0,
+              "duplicate_reports": 0,
+              "contradicted_reports": 1,
+              "contradicted_with_strong_findings": 1,
+              "supporting_items": 0,
+              "independent_external_groups": [],
+              "official_support": false,
+              "weather_support": false,
+              "contradicting_sources": 0,
+              "sources_unavailable": [
+                "GDELT DOC 2.0"
+              ],
+              "rules_met": []
+            },
+            "confidence_assessment": {
+              "level": "MEDIUM",
+              "percentage": null,
+              "percentage_note": "No percentage shown: PRALAY's numeric scores are uncalibrated heuristics, not probabilities.",
+              "reasons": [
+                "one report with a strong contradicting finding (e.g. recycled/old media or a GPS mismatch)",
+                "unavailable sources: GDELT DOC 2.0"
+              ]
+            }
+          },
+          {
+            "id": 6,
+            "title": "Flood query — Bhutan",
+            "category": "flood",
+            "status": "CORROBORATED",
+            "review_required": true,
+            "confidence": 70.0,
+            "reports": 0,
+            "last_activity": "2026-10-31T14:46:08+00:00",
+            "grid_cell": null,
+            "reason": "Corroboration rule(s) met: R4_two_independent_external",
+            "freshness": {
+              "state": "fresh",
+              "ttl_min": 20,
+              "last_checked": "2026-10-31T15:07:39+00:00",
+              "age_min": 1.1
+            },
+            "is_demo": false,
+            "missing": [
+              "No supporting heavy-rainfall signal in modelled weather data (does not disprove the event).",
+              "Fewer than two reports with medium/high location confidence."
+            ],
+            "evidence_profile": {
+              "reports_total": 0,
+              "reports_processed": 0,
+              "independent_reports": 0,
+              "reports_with_consistent_location": 0,
+              "reports_time_consistent": 0,
+              "duplicate_reports": 0,
+              "contradicted_reports": 0,
+              "contradicted_with_strong_findings": 0,
+              "supporting_items": 0,
+              "independent_external_groups": [],
+              "official_support": false,
+              "weather_support": false,
+              "contradicting_sources": 0,
+              "sources_unavailable": [
+                "GDELT DOC 2.0"
+              ],
+              "rules_met": [
+                "2+ independent news/official sources"
+              ]
+            },
+            "confidence_assessment": {
+              "level": "MEDIUM",
+              "percentage": null,
+              "percentage_note": "No percentage shown: PRALAY's numeric scores are uncalibrated heuristics, not probabilities.",
+              "reasons": [
+                "corroborated by one kind of evidence only (external sources; few reports with consistent locations)",
+                "unavailable sources: GDELT DOC 2.0"
+              ]
+            }
+          },
+          {
+            "id": 5,
+            "title": "Cyclone Storm query — Orissa",
+            "category": "cyclone_storm",
+            "status": "CORROBORATED",
+            "review_required": true,
+            "confidence": 55.0,
+            "reports": 0,
+            "last_activity": "2026-10-31T14:44:05+00:00",
+            "grid_cell": null,
+            "reason": "Corroboration rule(s) met: R4_two_independent_external",
+            "freshness": {
+              "state": "fresh",
+              "ttl_min": 20,
+              "last_checked": "2026-10-31T15:05:31+00:00",
+              "age_min": 3.3
+            },
+            "is_demo": false,
+            "missing": [
+              "No supporting heavy-rainfall signal in modelled weather data (does not disprove the event).",
+              "Fewer than two reports with medium/high location confidence."
+            ],
+            "evidence_profile": {
+              "reports_total": 0,
+              "reports_processed": 0,
+              "independent_reports": 0,
+              "reports_with_consistent_location": 0,
+              "reports_time_consistent": 0,
+              "duplicate_reports": 0,
+              "contradicted_reports": 0,
+              "contradicted_with_strong_findings": 0,
+              "supporting_items": 0,
+              "independent_external_groups": [],
+              "official_support": false,
+              "weather_support": false,
+              "contradicting_sources": 0,
+              "sources_unavailable": [
+                "GDELT DOC 2.0"
+              ],
+              "rules_met": [
+                "2+ independent news/official sources"
+              ]
+            },
+            "confidence_assessment": {
+              "level": "MEDIUM",
+              "percentage": null,
+              "percentage_note": "No percentage shown: PRALAY's numeric scores are uncalibrated heuristics, not probabilities.",
+              "reasons": [
+                "corroborated by one kind of evidence only (external sources; few reports with consistent locations)",
+                "unavailable sources: GDELT DOC 2.0"
+              ]
+            }
+          },
+          {
+            "id": 7,
+            "title": "Fire query — Delhi",
+            "category": "fire",
+            "status": "CORROBORATED",
+            "review_required": true,
+            "confidence": 70.0,
+            "reports": 0,
+            "last_activity": "2026-10-31T14:44:01+00:00",
+            "grid_cell": null,
+            "reason": "Corroboration rule(s) met: R4_two_independent_external",
+            "freshness": {
+              "state": "fresh",
+              "ttl_min": 20,
+              "last_checked": "2026-10-31T15:05:35+00:00",
+              "age_min": 3.2
+            },
+            "is_demo": false,
+            "missing": [
+              "Fewer than two reports with medium/high location confidence."
+            ],
+            "evidence_profile": {
+              "reports_total": 0,
+              "reports_processed": 0,
+              "independent_reports": 0,
+              "reports_with_consistent_location": 0,
+              "reports_time_consistent": 0,
+              "duplicate_reports": 0,
+              "contradicted_reports": 0,
+              "contradicted_with_strong_findings": 0,
+              "supporting_items": 2,
+              "independent_external_groups": [
+                "news:theindianexpress",
+                "news:thetimesofindia"
+              ],
+              "official_support": false,
+              "weather_support": false,
+              "contradicting_sources": 0,
+              "sources_unavailable": [
+                "GDELT DOC 2.0"
+              ],
+              "rules_met": [
+                "2+ independent news/official sources"
+              ]
+            },
+            "confidence_assessment": {
+              "level": "MEDIUM",
+              "percentage": null,
+              "percentage_note": "No percentage shown: PRALAY's numeric scores are uncalibrated heuristics, not probabilities.",
+              "reasons": [
+                "corroborated by one kind of evidence only (external sources; few reports with consistent locations)",
+                "unavailable sources: GDELT DOC 2.0"
+              ]
+            }
+          }
+        ],
+        "sources": [
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNcndVQ0JsS1I0T19kNzA4YzNRRm9yNW1DdThuMzFhZDQtQ011cVVVWlNlaXU3MTlmR0RvNXZaMnd4bm1vOFJfMXFHUS1BdEN6QVREZEl2ZkVCdUdfcEFZcGF4QmE4Nm1LdTBYdkRwR3htZXB6dkE4NkxyY053T0Vra0tzWU9XV0tvR1p0bnJxNWlCUmhCV1dtbHFVVlNwSmhiazZSRUw0Uy00VnUtd2pZdXhoZFNYSE5Dd21xZGlSeTlHRjZoV09KdXBtX2tHZTliU28w?oc=5",
+            "publisher": "News On AIR",
+            "stance": "supports",
+            "summary": "Headline: Flood fears grip West Bengal’s Alipurduar & Cooch Behar following reports of glacial lake outburst flood in Bhutan - News On AIR",
+            "publication_time": "2026-10-30T05:04:23+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          },
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTldpVDNsRDItWmNFWTh3ZlRRckMzOGNvZERfb2VUT0hYUXYyNXdEZnJ3a09uZ19NTDBxUEgzYVFRbVZqckIxNG1Nb3IyclNqU2Z0ZlpHV19RWmgxZ0FVMUJYVktvQV9GODFYbThBVFJadWd6N1RXMU9UUDNjWDd0dHBqWFltd2ttdEItYmllOVJCaGxRRERic0RwZ3VNd9IBqwFBVV95cUxQTTNBcmVkWTNhZm4wOEdxQnZRelczQUl4bzRzdDhJV2RkSUl4Tnd6SGh5M1dEV01GcFIwb1hTOENTeDJhMUwxMEhuS1YxbnBCRmtLcFlaQUdGYzZxU2RoWHlNRmU0OXB1X0ZId1VmYVZnWGlXS0ZUSHU2SjJETnNKYmRvV05RTHltYWJ5OXliSXdQdEk1cXdRRERkaU12N1Z3M0FCSjhMNm5uek0?oc=5",
+            "publisher": "The Quint",
+            "stance": "supports",
+            "summary": "Headline: Bhutan Glacial Lake Outburst Triggers Flood Alerts In Assam, Bengal - The Quint",
+            "publication_time": "2026-10-30T11:03:02+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          },
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQYTRqU0tISjBrS1BJR0NBd0FjUzA5dEZLVVdmM2N1dHdhYjJEeTdVZDFfaVRSR1lXeERTUFVYalpqOENnamVxbTRXY1dpa1lUNWhCeGc0NnJtbFJWd1d3TFN2R0ZfWHdld3pLeXBMRS1mUTJQMGh3WW1jOUQwUjdaWFNRRWtqSzNvNEFmNjdqdmo1QUJZb1ZNdFdQTnZrSG5KeXlwRkxyemR6cVd2NXdEQ2s1ODY5QdIBwwFBVV95cUxPQjhLU0FMQk9YaEFRbnc3dDRhbVBOZkZFbVlwWjFBeTAtbm54eVBFUWRkSUJoSUxHU3h6S0tOT2pjVXZIWEY2a0gtSUk5Y3o3U3MybThHR1piaGFlcHh1aGJlUnVEYjUtUi1aMnBRMlFDbkwxVTF6SkpDLUlVQXBxUS1oTWNpODNxUjRBRGxfeTdRdkM0QkZFLU1iVnB5aTRSMndpNEFxdHFMNDZjZ2UzSHJ6QTdZUXZnTlZvc2gxQ19XRG8?oc=5",
+            "publisher": "The New Indian Express",
+            "stance": "supports",
+            "summary": "Headline: GLOF from Bhutan's Sintaphu Lake triggers flood alerts in India - The New Indian Express",
+            "publication_time": "2026-10-30T13:04:44+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          },
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOeXh5YllpZWNhOVFuZTRTaFQyNXc2Ukx5SkY1UXY5aHRIMmxRQmxldHdOTWU5SFVBQ2lScjF3RTFwdnpQeS1PcWZFYWhtMmh6a0stYURRcWtmcFVmRlQ3UkNKeFFQY2VZZXlOSkk0RlN3aXd0RzlGWXNMWlY3MnRIOF9FM3k1QUlnWHhoM1VMSUpMRkRzakZCWTNtNUFqQVBZdWh5dktIRzRpT29sQXBMb3daM3UtR1p2ek93ajVRQ0dQUFZ4QXhyM2FORUphWk5CU1Brdnp5akZqSFVRRU1PeWJtcVlwTkNnaTVGOVln0gHzAUFVX3lxTE5UcC1xQWk4YkxRdFhKTXc2WkV5aFNTUlRISlpFc3hUVEVjTmRiUTQ1OGdPRWxMN1V4TExVZnpxY3hZb0tUdDVTS2tYY3JZYUdvNm94aUc2SWF5VzJ4cHM4Q3h1cmRYRVpPUUR6Tl9KWlRLbWRYQTZSdV82ZXRBLVpVSVVXM21OTnBGbHpvREp3eUhrOG5KUDFMcEc2ZEtJZW5Wbk1xcGx0WVV4SEhidDE1WkhYNlFOazZaeFZkWVYybjFzNEtJUFoyOUNQd2VPLVF4dV90ZjhuSEE4bjQzanJUS1dxdjUwRmRiTFY5cWJxVG03UQ?oc=5",
+            "publisher": "India Today",
+            "stance": "supports",
+            "summary": "Headline: Glacial lake outburst in Bhutan; 5 districts in Assam and Bengal on flood alert - India Today",
+            "publication_time": "2026-10-29T18:34:42+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          },
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNVmJEMFBYY0tGV1lxVmhTM1llRkJCNkJPY3BEcHJ6NkpsaDJOeVVxQTZxRldXTzRnVHJieHc3OFhrSElibEpvUnRQcGQ3ZDhrSENlU1E3bWdMOEktVTd5MWpDaVFib0VYTmk3WXJhV1l1WEItSEVsdmVNSmdnczlEVjhaNHFvcEFWc3h3d1U3YVVrM0NYWUZTbldsM21uUFA0MWtxdi02QkdOcUtRUWNyb2s2VFRXaEEyNE01LUMtNE5rMWJESjQwNXVR0gHSAUFVX3lxTE1WUGVUbFJxaGZleTF2R0NWZUNUOGxGdEdkZ2NlT3hkVE52clhmZ3dLaDJLb1ZmVWg3WjhuZVNXNXl2akFqNFN5aGRRUTRDcE9mRFRHNktoWDh0RjdfMGdrQldrQWIwWUt4VGNxejY4OWc5STBqZ1p3a05aZlJUNUFMVUxkb3NYbW8wYXp4Q3lKMWZETWZ0QUo4MGZIM2ZTZnp6UDNrbngtc1hCWWhaUnJJU0NRcXF5MndCSUo4UzdFV0J0S3MtQXRNanRsRkNteVNyUQ?oc=5",
+            "publisher": "NDTV",
+            "stance": "supports",
+            "summary": "Headline: Glacial Lake Outburst In Bhutan Sends Flash Floods Warning To Bengal, Assam - NDTV",
+            "publication_time": "2026-10-30T01:47:27+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          },
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPWDl4QlhyaHZpZmdyOWhzcldHU2tGNUdmaElyNDhOazg4ektWaUdQaDBCQ1lfZ2xoY0diS1E1bVk0N2VjOFBTWWl6WUxXTW9xV25wQ2M1bEt5OWh4d0pmaEFSZHdBQ1l5ZlRLM2k1aTlnbXdmZm01cjJ5SUZxdU1tTWk5aWd6ZHZjMTBqTUlDOTZEOVlFVzNsdFRiLTFNZnhEZFRaX1dLNnFiVldJYVZvclpMRUcwaVE5SDFydXlBNEFJbGIwbE02Ums4SkFWaHI3LTl2cTFpV2dDelFTYXg0Mm8tcXFDZ21jM1dtUUZXZnU2dWFi0gH6AUFVX3lxTE5vVU5rZE9ycnAzUVItakhpaGRDaUJfWmRGOE81Y2Jhbm1LdDJrMms2QW1uNkZkVzVYLTlVcG1fUjkxOXZCODVJWnhaQzdrUDJ4SVRNdno3eGREWENReExXdElfN1lJZ3hwR0V4MmFlTFNHcE5BZHB6cEVnY1hWUkNyd0ItdmlOdGQ1eXM2TDlId0VHXzJvS0JVeXhncUJBVUpmeGJqR0l0SFhERHVUZW03Mk5Tem91Ym0zUm1jSC1IVWdUZ04xU0JJeG1oYy11bmZiWlJsR1Q5Z1ZBMWlDWWNGOHZ1QXZ5V21INGpwcXhOMnpoYzVHVldMbVE?oc=5",
+            "publisher": "The Times of India",
+            "stance": "supports",
+            "summary": "Headline: Glacial lake outburst in Bhutan: North Bengal on red alert as flood threat looms; thousands evacuated - The Times of India",
+            "publication_time": "2026-10-30T03:11:00+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          },
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUVV6MFNXRUwyTGpWNmxIRHV3bDVOVVNFRU5uNkgyc0pvRmlZdm8yTmdGaVA5REV4UFNHYWQ1dVNqQ0FUanB0Zk1FcThVWFY2ODlMMWJKWEsxbzYzSkhKZWVncXZwdVV0N0lYcGp6UWFjajFkekgzcjViQkVseEJqVTJEcy1UTk0tYjk1Y2pXcGJsQnpGamlWTzFMSEoyZ9IBowFBVV95cUxQSzl3S3U4cTFCVFllR0F3T2tXLWhrVFl1aXp6TFhrMkNKTHFLZWFtVUdKSUVQTTZpb0JnUkdla0JWZVVxWEJrRXBFcE0zNG0wYnNrcVRwazZBT3pFM1ZVbjJDS1YyWUlnd0ZJRGtpZ0hod1BGcG5vZlZmTjVHWG9iWEpYb3hTYjFoYjhJVzNlV2Y5bGw5RXRlam1LSFcxUmh6T3VZ?oc=5",
+            "publisher": "Al Jazeera",
+            "stance": "supports",
+            "summary": "Headline: Bhutan hot springs hit by flood from glacial lake burst - Al Jazeera",
+            "publication_time": "2026-10-30T14:04:56+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          },
+          {
+            "incident_id": 6,
+            "source_name": "Google News RSS",
+            "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQWVvOVBGX29OeV9aQjg0dHpVVjZLQ05jcG93UXh2emJ4aFRCVEo1bDNtbDZXekFnTWdtZXU4d0dOSkZBbmduYUowbzRaeDFkMW13d1RySzZwTl9vMFNHRjVfTjYwWEFhQ0U1S0NCQmhJVXYxWi02NUNwSWtScEZ2em9JQmd5VmNYVXFSV2lPM1JRU1dQVTh1eEdUMGpjdHo5enBRbjNEa1NLQ2NHd0pnY9IBtwFBVV95cUxNdUswQVRwV0t3MGF6Z1RRcGNYQVJVNzNySTluaGczemlfWDVobFI4Mm5KU19fSnlxUzZtOEJkeURTM25XMUZvSmM5UzNDZGZ0dmZLX0dTOHY5Mk1SaG00SjdXWUhZMGU3MHFKQW5WWExLUUNaZUFIeHgyaVpIOTJsX3BlZXBLbmYtT3NEeUtHemkxd2VKSXVvaXk2WjF6WW1oU2t5eHd5RE9oNWFwNjNadG5BSHZTdlU?oc=5",
+            "publisher": "The Hindu",
+            "stance": "supports",
+            "summary": "Headline: Glacial Lake Outburst Flood damages roads, washes away bridge in Bhutan - The Hindu",
+            "publication_time": "2026-10-30T21:25:00+00:00",
+            "retrieval_time": "2026-10-31T14:46:07+00:00"
+          }
+        ],
+        "items": [],
+        "provenance": {
+          "query_cache": "not used (live database listing)",
+          "geocode": null
+        },
+        "answer": "7 incident(s) in shared intelligence.",
+        "summary": {
+          "headline": "7 incident(s) in shared intelligence.",
+          "status": null,
+          "confidence": null,
+          "reports": null,
+          "incidents": 7,
+          "freshness": "fresh",
+          "why": null,
+          "limitations": [],
+          "other_incidents": []
+        },
+        "context": {
+          "category": null,
+          "place": null,
+          "name": null,
+          "hazard": null,
+          "historical": false
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "stored_incident_ids": [
+    1,
+    2,
+    4,
+    3,
+    6,
+    5,
+    7
+  ],
+  "stored_report_ids": [
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "hotspots": [
+    {
+      "anchor": [
+        30.7046,
+        76.7179
+      ],
+      "report_ids": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "incident_ids": [
+        1
+      ]
+    }
+  ]
+}

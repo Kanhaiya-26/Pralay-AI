@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+pillow>=10.3
+numpy>=1.26
+httpx>=0.27
+python-dotenv>=1.0
+opencv-python-headless>=4.9
+psutil>=5.9            # memory guard for deferred local visual AI; start.ps1 checks

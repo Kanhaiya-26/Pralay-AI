@@ -1,0 +1,1 @@
+india_boundary.geojson: geoBoundaries IND-ADM0-90661403 (built 2024-02-21), source DataMeet India community / Election Commission of India, licence CC BY 2.5 IN (https://github.com/datameet/maps). Used only as a country gate for source coordinates.

@@ -1,0 +1,130 @@
+{
+  "reports": 8,
+  "incidents": 7,
+  "media": 8,
+  "evidence": 134,
+  "archive_media": 1,
+  "assessments": 31,
+  "status_history": 144,
+  "review_history": 0,
+  "connector_runs": 0,
+  "reports_by_origin": [
+    {
+      "source_type": "demo",
+      "is_demo": 1,
+      "n": 8
+    }
+  ],
+  "incidents_by_origin": [
+    {
+      "origin": "investigation",
+      "is_demo": 0,
+      "n": 3
+    },
+    {
+      "origin": "reports",
+      "is_demo": 1,
+      "n": 4
+    }
+  ],
+  "reports_detail": [
+    {
+      "id": 1,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Knee-deep water on the main road near Phase 7 market, cars stalled"
+    },
+    {
+      "id": 2,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Waterlogging in residential sector, water entering ground floors"
+    },
+    {
+      "id": 3,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Underpass flooded after heavy rain, traffic diverted"
+    },
+    {
+      "id": 4,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Forwarded on WhatsApp: Mohali flooding now"
+    },
+    {
+      "id": 5,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Massive flood in Mohali right now!!"
+    },
+    {
+      "id": 6,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Fire in a showroom, thick smoke"
+    },
+    {
+      "id": 7,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Ghaggar overflowing near the bridge"
+    },
+    {
+      "id": 8,
+      "is_demo": 1,
+      "source_type": "demo",
+      "description": "Debris on the highway after landslide, road blocked"
+    }
+  ],
+  "archive": [
+    {
+      "id": 1,
+      "is_demo": 1,
+      "source_name": "DEMO ARCHIVE (synthetic record)",
+      "description": "Synthetic stand-in for a widely shared 2023 flood photo"
+    }
+  ],
+  "sources": [
+    {
+      "source": "nominatim",
+      "attempts": 21,
+      "successes": 21,
+      "last_result": "ok",
+      "last_error": null
+    },
+    {
+      "source": "ndma_sachet",
+      "attempts": 7,
+      "successes": 7,
+      "last_result": "ok",
+      "last_error": null
+    },
+    {
+      "source": "google_news",
+      "attempts": 64,
+      "successes": 64,
+      "last_result": "ok",
+      "last_error": null
+    },
+    {
+      "source": "open_meteo",
+      "attempts": 47,
+      "successes": 47,
+      "last_result": "ok",
+      "last_error": null
+    },
+    {
+      "source": "gdelt",
+      "attempts": 15,
+      "successes": 2,
+      "last_result": "skipped_cooldown",
+      "last_error": "skipped: source in cooldown until 2026-10-31T15:32:56+00:00 after rate limiting/repeated failures"
+    }
+  ],
+  "live_health": {
+    "ok": true,
+    "db": "C:\\Users\\kanha\\Downloads\\PRALAY-AI\\backend\\data\\pralay.db",
+    "time": "2026-10-31T15:33:24+00:00"
+  }
+}

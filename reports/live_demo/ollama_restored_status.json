@@ -1,0 +1,20 @@
+﻿{
+    "provider":  "ollama",
+    "model":  "qwen2.5vl:3b",
+    "endpoint":  "http://127.0.0.1:11434",
+    "mode":  "deferred",
+    "configured":  true,
+    "recommended_models":  {
+                               "qwen2.5vl:3b":  "Default. ~3.2 GB download. Strong at reading signboards/text (OCR) and following a JSON schema; smallest capable option for 8 GB RAM, CPU-only laptops.",
+                               "gemma3:4b":  "Alternative. ~3.3 GB download. Good general scene description; slightly larger memory footprint."
+                           },
+    "paid":  false,
+    "media_leaves_machine":  false,
+    "state":  "READY",
+    "installed_models":  [
+                             "gemma3:4b",
+                             "qwen2.5vl:3b"
+                         ],
+    "detail":  "Ollama running; qwen2.5vl:3b installed",
+    "checked_at":  "2026-10-31T15:10:35+00:00"
+}
